@@ -1,0 +1,179 @@
+// for input or textarea element
+.ui-input
+  -webkit-appearance: none
+  display: block
+  width: 100%
+  background: transparent
+  font-family: $systemFont
+  font-size: 16px
+  color: $fontColor
+  border: 1px solid $borderColor
+  border-radius: 0px
+  padding: 15px 15px
+  transition: background
+  transition: border .25s $ease, color .25s $ease, background .25s $ease
+  &::placeholder
+    color: rgba($fontColor, 5)
+  &:focus, &:active
+    background: white
+  &.has-error
+    border-color: $colorRed
+    &::placeholder
+      color: rgba($colorRed, .5)
+  &.js-datepicker
+    padding-right: 50px
+
++r($md)
+  .ui-input
+    &.has-error
+      margin-bottom: 16px
+      & + .ui-pass-eye
+        bottom: 30px
+
+
+.ui-input-iconed
+  position: relative
+  .ico
+    position: absolute
+    top: 50%
+    right: 12px
+    transform: translateY(-50%)
+    color: $colorPrimary
+    font-size: 24px
+  .ico-mono-calendar
+    font-size: 29px
+
+textarea.ui-input
+  resize: vertical
+
+
+// eye
+.ui-pass-eye
+  position: absolute
+  z-index: 2
+  right: 15px
+  bottom: 14px
+  cursor: pointer
+  &__wrapper
+    position: relative
+    size: 26px 22px
+    font-size: 0
+    .ico
+      position: absolute
+      font-size: 22px
+      transition: color .25s $ease, opacity .25s $ease
+    .ico-mono-eye-closed
+      color: #ABABAB
+    .ico-mono-eye-opened
+      color: $fontColor
+      opacity: 0
+      font-size: 20px
+      transform: translateY(1px)
+  &:hover
+    .ui-pass-eye__wrapper
+      .ico-mono-eye-closed
+        color: $fontColor
+      .ico-mono
+        color: #ABABAB
+  &.is-active
+    .ui-pass-eye__wrapper
+      .ico-mono-eye-closed
+        opacity: 0
+      .ico-mono-eye-opened
+        opacity: 1
+
+
+
+// ui-dynamic-input
+.ui-dynamic-input
+  position: relative
+  &__label
+    position: absolute
+    top: 19px
+    left: 0px
+    right: 10px
+    max-width: 100%
+    font-weight: 500
+    font-size: 20px
+    line-height: (32 / 20)
+    color: $fontColor
+    pointer-events: none
+    transform-origin: left top
+    // +text-overflow
+    transition: .25s $ease
+  &__input
+    -webkit-appearance: none
+    display: block
+    width: 100%
+    background: transparent
+    font-family: $baseFont
+    color: $fontColor
+    border: 0
+    border-bottom: 1px solid $borderColor
+    border-radius: 0px
+    font-size: 20px
+    line-height: (32 / 20)
+    padding: 25px 0px 11px
+    line-height: normal
+    transition: border .25s $ease, color .25s $ease
+    &::placeholder
+      color: $fontColor
+    &:focus, &:active
+      border-color: $fontColor
+    &.has-error
+      color: $colorRed
+      border-color: $colorRed
+      &::placeholder
+        color: rgba($colorRed, .5)
+    &[disabled], &[readonly]
+      background: $colorBg
+      font-weight: 300
+      &:focus, &:active
+        border-color: $borderColor
+  &.is-focused
+    .ui-dynamic-input
+      &__label
+        // top: 9px
+        // font-size: 10px
+        // compensate scale
+        max-width: 135%
+        width: 135%
+        +text-overflow
+        transform: translate(0,-10px) scale(.65)
+  textarea.ui-dynamic-input__input
+    resize: vertical
+
+  &--white
+    .ui-dynamic-input
+      &__label
+        color: white
+      &__input
+        color: white
+        &::placeholder
+          color: rgba(white, .75)
+        &:focus, &:active
+          border-color: rgba(white, .75)
+
+
+// validation message
+.ui-input__validation
+  position: absolute
+  top: 100%
+  left: 0
+  padding-top: 6px
+  color: $colorRed
+  font-size: 14px
+
++r($md)
+  .ui-input__validation
+    top: calc(100% - 16px)
+
+input[type="date"]
+  // padding-top: 14px
+  // padding-bottom: 14px
+  max-height: 50px
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator
+    display: none
+    -webkit-appearance: none
+
