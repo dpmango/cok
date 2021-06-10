@@ -1,48 +1,102 @@
-/* HEADER
+/* HEADER*/
 .header
   position: fixed
   top: 0
   right: 0
   left: 0
   z-index: 9
-  background: #f5f5f5
+  background: white
   will-change: transform
   backface-visibility: hidden
   transform-style: preserve-3d
-  &__wrapper
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15)
+  &__top
+    background: $colorPrimary
+    color: white
+  &__top-wrapper
     display: flex
     align-items: center
-    height: 70px
+    justify-content: space-between
+    padding: 8px 0 9px
+    a
+      font-size: 14px
+      line-height: (17 / 14)
+
+  &__wrapper
+    display: flex
+    padding: 22px 0
+
+  &__left
+    flex: 0 0 auto
+    padding-right: 30px
+    font-size: 0
 
   &__logo
-    flex: 0 0 auto
-    font-size: 35px
-    padding-right: 30px
+    display: inline-block
+    font-size: 0
+    .ico
+      font-size: 87px
+
+  &__right
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+
+  &__right-wrapper
+    display: flex
+    align-items: center
+    margin-top: auto
+
+  &__phone
+    font-size: 18px
+    line-height: 22px
+    letter-spacing: 0.01em
+    padding: 8px 0
+    margin-left: auto
 
   &__menu
-    flex: 0 1 auto
+    flex: 1 1 auto
     display: flex
     align-items: center
     font-size: 18px
-    margin: 0 auto
+    margin: auto 40px 0 0
     padding: 0
     li
       display: inline-block
-      margin-right: 30px
+      margin-right: auto
+      &::after
+        display: none
+        content: ' '
+        right: 0
+        width: 9px
+        height: 6px
+        background: svg-load('../icons/svg-mono/caret.svg') no-repeat center
+        background-size: contain
+        margin-left: 10px
+        vertical-align: middle
+      &.have-ul
+        &::after
+          display: inline-block
+      &:last-child
+        margin-right: 0
     a
-      transition: color .25s $ease
-      &:hover
-        color: tomato
+      transition: color .25s ease
+
+  &__search
+    flex: 0 0 auto
+    font-size: 0
+    .ico
+      font-size: 20px
 
   &__hamburger
-    // display: none
+    display: none
     padding-left: 20px
 
   &.is-fixed
     // should be normalized to -100% scroll at this point
     position: fixed
     transform: translate3d(0,-100%,0) !important
-    transition: transform .25s $ease
+    transition: transform .25s ease
     .header__wrapper
       padding-top: 10px
       padding-bottom: 10px
@@ -51,15 +105,5 @@
     transform: translate3d(0,0,0) !important
 
   &.is-transitioning
-    transition: transform .25s $ease
+    transition: transform .25s ease
     transform: translate3d(0,-100%,0) !important
-
-
-+r($lg)
-  .header
-    &__menu
-      display: none
-    &__hamburger
-      margin-left: auto
-      display: block
-

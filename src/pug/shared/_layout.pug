@@ -1,11 +1,15 @@
 include ../utilities/_mixins
 doctype html
-html(lang="en")
+html(lang="ru")
   head
     include _head
 
   body
     // place where pjax bindings happen's
+    .svg-sprite
+      include ../../../dist/img/sprite-color.svg
+      include ../../../dist/img/sprite-mono.svg
+
     #barba-wrapper
       block header
         include ../../components/header/_header
