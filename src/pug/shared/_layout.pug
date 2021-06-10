@@ -10,23 +10,18 @@ html(lang="ru")
       include ../../../dist/img/sprite-color.svg
       include ../../../dist/img/sprite-mono.svg
 
-    #barba-wrapper
-      block header
-        include ../../components/header/_header
+    block header
+      include ../../components/header/_header
 
-      // what should be changed with every pjax
-      .page(class=outClass)
-        .page__content
-          block content
+    .page
+      .page__content
+        block content
 
-        block footer
-          include ../../components/footer/_footer
+      block footer
+        include ../../components/footer/_footer
 
-        block modals
-          include ../../components/modals/_shared
-
-      block dev
-        include ../../components/dev/demoGrid/_demoGrid
+      block modals
+        include ../../components/modals/_shared
 
       block scripts
         include _scripts
