@@ -1,0 +1,12 @@
+// HERO
+.hero.header-offset
+  .swiper-container.js-swiper-hero
+    .swiper-wrapper
+      each slide in [1,2,3]
+        .swiper-slide
+          .hero__slide
+            .hero__background
+              img(src='img/hero-1.jpg' srcset='img/hero-1@2x.jpg 2x')
+            .hero__content.js-container-align(data-type="padding" data-stop="<992")
+              .hero__slide-title Длинный заголовок баннера
+              .hero__slide-description Краткое описание сути предложения, дополняющее призыв к действию

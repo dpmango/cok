@@ -39,24 +39,25 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     };
 
     // Plugins which depends on DOM and page content
-    app.initPlugins = function (fromPjax) {
+    app.initPlugins = function () {
       APP.Plugins.Teleport.init();
-      APP.Plugins.MicroModal.init(fromPjax);
-      APP.Plugins.Sliders.init(fromPjax);
+      APP.Plugins.MicroModal.init();
+      APP.Plugins.Sliders.init();
       APP.Plugins.Masks.init();
       APP.Plugins.Choises.init();
       APP.Plugins.TextareaAutoExpand.init();
       APP.Plugins.Validations.init();
-      APP.Plugins.Tabs.init(fromPjax);
-      APP.Plugins.Table.init(fromPjax);
-      APP.Plugins.Upload.init(fromPjax);
+      APP.Plugins.LAYOUT.init();
+      APP.Plugins.Tabs.init();
+      APP.Plugins.Table.init();
+      APP.Plugins.Upload.init();
       APP.Plugins.LegacySupport.fixImages();
       APP.Plugins.Ymaps.init();
     };
 
     // All components from `src/componenets`
-    app.initComponents = function (fromPjax) {
-      APP.Components.Header.init(fromPjax);
+    app.initComponents = function () {
+      APP.Components.Header.init();
     };
 
     return app;
