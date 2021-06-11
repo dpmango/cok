@@ -5,7 +5,9 @@
   APP.Plugins.Sliders = {
     data: {
       swipers: {
-        heroSlider: undefined,
+        hero: undefined,
+        activities: undefined,
+        programs: undefined,
       },
       responsiveSwipers: {
         backstageSwiper: {
@@ -114,13 +116,59 @@
     initSwipers: function () {
       var _this = this;
 
-      // HeroSlider
-      this.data.swipers.heroSlider = _this.utils.buildSwiper(
+      // hero
+      this.data.swipers.hero = _this.utils.buildSwiper(
         'hero',
         {
           loop: true,
           spaceBetween: 0,
           slidesPerView: 1,
+        },
+        {}
+      );
+
+      // activities
+      this.data.swipers.activities = _this.utils.buildSwiper(
+        'activities',
+        {
+          loop: false,
+          spaceBetween: 34,
+          slidesPerView: 3,
+        },
+        { navigation: true }
+      );
+
+      // program
+      this.data.swipers.programs = _this.utils.buildSwiper(
+        'programs',
+        {
+          loop: false,
+          spaceBetween: 34,
+          slidesPerView: 3,
+          slidesPerColumn: 2,
+          slidesPerColumnFill: 'row',
+        },
+        { navigation: true }
+      );
+
+      // events
+      this.data.swipers.events = _this.utils.buildSwiper(
+        'events',
+        {
+          loop: true,
+          spaceBetween: 64,
+          slidesPerView: 2,
+        },
+        { pagination: true }
+      );
+
+      // news
+      this.data.swipers.news = _this.utils.buildSwiper(
+        'news',
+        {
+          loop: true,
+          spaceBetween: 64,
+          slidesPerView: 2,
         },
         {}
       );

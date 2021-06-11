@@ -1,0 +1,41 @@
+// sliders pagination
+.pagination-simple
+  .swiper-pagination
+    display: flex
+    justify-content: center
+
+  .swiper-pagination-bullet
+    width: 10px
+    height: 10px
+    background: #D3D3D3
+    border-radius: 50%
+    margin-right: 20px
+    cursor: pointer
+    &:last-child
+      margin-right: 0
+
+  .swiper-pagination-bullet-active
+    background: #52CEFF
+
+// sliders navigation
+.navigation-simple
+  .swiper-next, .swiper-prev
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    padding: 10px
+    cursor: pointer
+    font-size: 0
+    transition: opacity .25s $ease
+    .ico
+      font-size: 18px
+    &:hover
+      opacity: 0.7
+  .swiper-next
+    right: -50px
+  .swiper-prev
+    left: -50px
+
+  .swiper-button-disabled
+    pointer-events: none
+    opacity: 0.4

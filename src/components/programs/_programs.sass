@@ -1,0 +1,48 @@
+.programs
+  background: $colorBg
+  padding: 24px 0 50px
+  &__slider
+    position: relative
+    margin-top: 34px
+    .swiper-wrapper
+      padding-bottom: 20px
+    .swiper-next, .swiper-prev
+      color: $colorPrimary
+
+
+.program-card
+  position: relative
+  z-index: 1
+  display: flex
+  flex-direction: column
+  background: #FFFFFF
+  border-radius: 8px 8px 32px 8px
+  padding: 24px 26px 22px 28px
+  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.1)
+  &__head
+    display: flex
+  &__title
+    font-size: 16px
+    line-height: 19px
+    color: $colorLink
+  &__content
+    display: flex
+  &__description
+    margin-top: 16px
+    font-size: 12px
+    line-height: 14px
+    padding-right: 40px
+    color: $colorGray
+    text-decoration: none
+  &__cta
+    margin-top: auto
+    margin-bottom: -4px
+    font-size: 0
+    color: $colorPrimaryLight
+    .ico
+      font-size: 15px
+  &:hover
+    text-decoration: none
+    .program-card
+      &__title
+        text-decoration: underline
