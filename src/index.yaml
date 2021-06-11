@@ -2,8 +2,8 @@ ProjectTitle: COK
 
 PageList:
   - file: homepage.html
-    ready: 10
+    ready: 40
   - file: text.html
     ready: 0
   - file: ui.html
-    ready: 0
+    ready: 10

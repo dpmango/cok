@@ -10,9 +10,13 @@
     justify-content: center
     width: 50%
     min-height: 450px
-    background: rgba(89, 135, 179, 0.4)
-    backdrop-filter: blur(14px)
     color: white
+    @supports (backdrop-filter: blur(14px))
+      background: rgba(89, 135, 179, 0.4)
+      backdrop-filter: blur(14px)
+    @supports not (backdrop-filter: blur(14px))
+      background: rgba(89, 135, 179, 0.7)
+
   &__background
     position: absolute 0
     z-index: 1

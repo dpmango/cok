@@ -1,17 +1,6 @@
 // .dev
 .dev
   .container
-    // SECTION
-    section
-      .wysiwyg
-        h3 Based on <a href="https://github.com/dpmango/gulp-starter-pack" target="_blank">gulp starter pack</a>
-
-
-    // SECTION
-    section.dev__section
-      h1.h1-title JS and barba
-      .wysiwyg
-        p please use _document.on('click', 'el_selector', function ... ) for barba.js bindings
 
 
     // SECTION
@@ -40,13 +29,19 @@
         p Folder: /src/icons
 
       .dev-icons
-        +svgMono('email')
-        +svgMono('calendar')
+        +svgMono('arrow-long')
+        +svgMono('arrow-nav-left')
+        +svgMono('arrow-nav-right')
+        +svgMono('arrow')
+        +svgMono('caret')
         +svgMono('close')
-        +svgMono('arrow-fat')
+        +svgMono('eye')
+        +svgMono('search')
+
 
       .dev-icons
-        +svgColor('example')
+        +svgColor('logo')
+        +svgColor('logo-small')
 
     // SECTION
     section.dev__section
@@ -56,7 +51,7 @@
         p Folder: /src/icons
 
       .dev-icons
-        i.icon.icon-logo
+        //- i.icon.icon-logo
 
 
     // SECTION
@@ -118,18 +113,6 @@
           label(for="ui_input_2") Textarea Label
           textarea.ui-input(placeholder="What's up?" id="ui_input_2" rows="5" data-min-rows="5")
 
-        // Dates
-        .ui-group.mt-2
-          label(for="ui_input_2") Dates (air datepicker)
-          .row
-            .col.col-6
-              .ui-input-iconed
-                input.ui-input.js-datepicker(type="date" id="ui_input_2")
-                +svgMono('calendar')
-            .col.col-6
-              .ui-input-iconed
-                input.ui-input.js-datepicker(type="date" id="ui_input_3")
-                +svgMono('calendar')
 
         // Select
         .ui-group.mt-2
@@ -142,8 +125,8 @@
             option() Another option 2
 
     // SECTION (Interface)
-    section.dev__section
-      h1.h1-title Modals (micromodal or magnific popup)
+    //- section.dev__section
+    //-   h1.h1-title Modals (micromodal or magnific popup)
 
-      .dev-btns
-        a(href="#" data-micromodal-trigger="exampleModal").btn.btn-primary Open example modal
+    //-   .dev-btns
+    //-     a(href="#" data-micromodal-trigger="exampleModal").btn.btn-primary Open example modal

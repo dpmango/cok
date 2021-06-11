@@ -41,6 +41,7 @@
     flex: 1 1 auto
     display: flex
     flex-direction: column
+    padding-bottom: 4px
 
   &__right-wrapper
     display: flex
@@ -58,9 +59,9 @@
     flex: 1 1 auto
     display: flex
     align-items: center
-    font-size: 18px
-    margin: auto 40px 0 0
-    padding: 0 0 0 40px
+    font-size: 16px
+    margin: auto 50px 0 0
+    padding: 0 0 0 90px
     li
       display: inline-block
       margin-right: auto
@@ -98,9 +99,19 @@
     position: fixed
     transform: translate3d(0,-100%,0) !important
     transition: transform .25s ease
-    .header__wrapper
-      padding-top: 10px
-      padding-bottom: 10px
+    .header
+      &__top
+        display: none
+      &__logo
+        .ico
+          font-size: 46px
+      &__phone
+        display: none
+      &__wrapper
+        padding-top: 10px
+        padding-bottom: 10px
+      &__right-wrapper
+        margin-bottom: auto
 
   &.is-fixed-visible
     transform: translate3d(0,0,0) !important
