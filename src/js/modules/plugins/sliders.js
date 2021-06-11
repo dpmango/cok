@@ -8,6 +8,8 @@
         hero: undefined,
         activities: undefined,
         programs: undefined,
+        events: undefined,
+        news: undefined,
       },
       responsiveSwipers: {
         backstageSwiper: {
@@ -123,8 +125,12 @@
           loop: true,
           spaceBetween: 0,
           slidesPerView: 1,
+          pagination: {
+            el: '.swiper-hero-pagination',
+            type: 'fraction',
+          },
         },
-        {}
+        { navigation: true }
       );
 
       // activities
