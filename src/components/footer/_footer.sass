@@ -1,7 +1,103 @@
 // FOOTER
 .footer
-  background: #f5f5f5
+  position: relative
+  z-index: 1
+  background: $colorPrimary
+  color: white
+  overflow: hidden
   &__wrapper
     display: flex
-    align-items: center
-    height: 100px
+    padding: 34px 0 48px
+    margin: -10px
+  &__main, &__menu, &__nav
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+  &__main
+    flex: 0 0 340px
+    max-width: 340px
+  &__menu
+    flex: 0 1 500px
+    max-width: 500px
+    margin-left: auto
+    padding-top: 32px
+  &__nav
+    flex: 0 0 160px
+    max-width: 160px
+    display: flex
+    flex-direction: column
+    padding-top: 32px
+  &__logo
+    font-size: 0
+    margin-left: -40px
+    .ico
+      font-size: 52px
+
+  .svg-logo-letter
+    fill: white
+
+  &__copyright
+    margin-top: 20px
+    max-width: 279px
+    p
+      font-size: 12px
+      line-height: 1.47
+      margin: 0
+      a
+        text-decoration: underline
+        &:hover
+          text-decoration: none
+      & + p
+        margin-top: 1.5em
+
+  &__contacts
+    margin-top: 20px
+    margin-bottom: 20px
+    font-size: 18px
+    line-height: 1.4
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+
+  &__list
+
+  &__list-title
+    margin-bottom: 8px
+    font-size: 18px
+    line-height: 200%
+
+  &__list-ul
+    margin: 0
+    padding: 0
+    li
+      display: block
+      margin-bottom: 9px
+      &:last-child
+        margin-bottom: 0
+    a
+      font-size: 14px
+      line-height: 100%
+      text-decoration-line: underline
+      color: #B8E1FF
+      transition: color .1s $ease
+      &:hover
+        text-decoration: none
+        color: white
+
+  &__nav-ul
+    margin: 0
+    padding: 0
+    li
+      display: block
+      margin-top: 4px
+      margin-bottom: 12px
+      &:last-child
+        margin-bottom: 0
+    a
+      font-size: 18px
+      line-height: 1.4
+
+  &__developer
+    margin-top: auto
+    font-size: 12px
+    line-height: 1.4
