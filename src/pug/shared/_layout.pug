@@ -1,28 +1,27 @@
 include ../utilities/_mixins
 doctype html
-html(lang="en")
+html(lang="ru")
   head
     include _head
 
   body
     // place where pjax bindings happen's
-    #barba-wrapper
-      block header
-        include ../../components/header/_header
+    .svg-sprite
+      include ../../../dist/img/sprite-color.svg
+      include ../../../dist/img/sprite-mono.svg
 
-      // what should be changed with every pjax
-      .page(class=outClass)
-        .page__content
-          block content
+    block header
+      include ../../components/header/_header
 
-        block footer
-          include ../../components/footer/_footer
+    .page
+      .page__content
+        block content
 
-        block modals
-          include ../../components/modals/_shared
+      block footer
+        include ../../components/footer/_footer
 
-      block dev
-        include ../../components/dev/demoGrid/_demoGrid
+      //- block modals
+      //-   include ../../components/modals/_shared
 
       block scripts
         include _scripts

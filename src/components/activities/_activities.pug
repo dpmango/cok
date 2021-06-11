@@ -1,0 +1,26 @@
+// Activities
+.activities
+  .container
+
+    h2.h2-title Направления деятельности
+
+    .activities__slider.navigation-simple
+      .swiper-container.js-swiper-activities
+        .swiper-wrapper
+          each slide in [1,2,3,4]
+            .swiper-slide
+              a(href="#").activity-card
+                .activity-card__head
+                  .activity-card__logo
+                    +svgColor('logo-small')
+                  .activity-card__title Название направления деятельности
+
+                .activity-card__description На Сайте должен быть реализован раздел публикации общедоступных обучающих курсов доступных в СУЗ...
+
+                .activity-card__cta
+                  +svgMono('arrow-long')
+
+      .swiper-next.swiper-activities-next
+        +svgMono('arrow-nav-right')
+      .swiper-prev.swiper-activities-prev
+        +svgMono('arrow-nav-left')

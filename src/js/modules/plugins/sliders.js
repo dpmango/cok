@@ -4,11 +4,17 @@
 (function ($, APP) {
   APP.Plugins.Sliders = {
     data: {
-      swipers: [],
+      swipers: {
+        hero: undefined,
+        activities: undefined,
+        programs: undefined,
+        events: undefined,
+        news: undefined,
+      },
       responsiveSwipers: {
-        productsSwiper: {
+        backstageSwiper: {
           instances: [],
-          enableOn: 991,
+          enableOn: 768,
         },
       },
     },
@@ -17,14 +23,79 @@
         this.initSwipers();
         this.initSwiperDataTree();
         this.initResponsiveSwipers();
-        this.listenResize();
       }
+      this.listenResize();
     },
-    reinit: function () {
-      // without resize listeners double check
-      this.initSwipers();
-      this.initSwiperDataTree();
-      this.initResponsiveSwipers();
+    utils: {
+      // builder helpers
+      buildProps: function (name, options, $dom) {
+        const defaultProps = {
+          watchOverflow: true,
+          setWrapperSize: false,
+          slidesPerView: 'auto',
+          normalizeSlideIndex: true,
+          slideToClickedSlide: true,
+          touchEventsTarget: 'wrapper',
+          threshold: 10,
+        };
+
+        // optional props
+        let oProps = {};
+        if (options && options.pagination) {
+          oProps = {
+            pagination: {
+              el: `.swiper-${name}-pagination`,
+              type: 'bullets',
+              clickable: true,
+            },
+          };
+        }
+
+        if (options && options.navigation) {
+          oProps = {
+            ...oProps,
+            navigation: {
+              nextEl: `.swiper-${name}-next`,
+              prevEl: `.swiper-${name}-prev`,
+            },
+          };
+        }
+
+        // build props from data-
+        let domProps = {};
+        const dataBefore = $dom.data('offset-before');
+        const dataAfter = $dom.data('offset-after');
+        if (dataBefore) {
+          domProps = {
+            slidesOffsetBefore: dataBefore,
+          };
+        }
+        if (dataAfter) {
+          domProps = {
+            ...domProps,
+            slidesOffsetAfter: dataAfter,
+          };
+        }
+
+        return {
+          ...defaultProps,
+          ...oProps,
+          ...domProps,
+        };
+      },
+      buildSwiper: function (name, eProps, options) {
+        const $page = $('.page').last();
+        const $dom = $page.find(`.js-swiper-${name}`);
+
+        if ($dom.length === 0) return;
+
+        let props = APP.Plugins.Sliders.utils.buildProps(name, options, $dom);
+        let swiper = new Swiper(`.js-swiper-${name}:not(.swiper-container-initialized)`, {
+          ...props,
+          ...eProps,
+        });
+        return swiper;
+      },
     },
     update: function (selector) {
       var $swiper;
@@ -45,80 +116,94 @@
       _window.on('resize', debounce(this.initResponsiveSwipers.bind(this), 200));
     },
     initSwipers: function () {
-      var $page = $('.page').last();
+      var _this = this;
 
-      // PDP gallery (initialization as a group)
-      // gallery main is dependand on thumbs
-      var haveGalleryThumbs = $page.find('.js-pdpGallery-thumbs').length > 0;
-      var haveGalleryMain = $page.find('.js-pdpGallery-main').length > 0;
-      if (haveGalleryThumbs && haveGalleryMain) {
-        var selector = '.js-pdpGallery-thumbs:not(.swiper-container-initialized)';
-        var $thumbs = $page.find(selector);
-        // if ($thumbs.length === 0) return;
+      // hero
+      this.data.swipers.hero = _this.utils.buildSwiper(
+        'hero',
+        {
+          loop: true,
+          spaceBetween: 0,
+          slidesPerView: 1,
+          pagination: {
+            el: '.swiper-hero-pagination',
+            type: 'fraction',
+          },
+        },
+        { navigation: true }
+      );
 
-        $thumbs.each(function (i, thumb) {
-          var id = $(thumb).data('swiper-group-id');
-          new Swiper(thumb, {
-            slideToClickedSlide: false,
-            preventClicks: false,
-            preventClicksPropagation: false,
-            watchOverflow: true,
-            setWrapperSize: false,
-            spaceBetween: 5,
-            slidesPerView: 'auto',
-            normalizeSlideIndex: true,
-            direction: 'vertical',
-            on: {
-              init: function () {
-                initGallerySwiper(id, this);
-              },
-            },
-          });
-        });
-      }
+      // activities
+      this.data.swipers.activities = _this.utils.buildSwiper(
+        'activities',
+        {
+          loop: false,
+          spaceBetween: 34,
+          slidesPerView: 3,
+        },
+        { navigation: true }
+      );
 
-      function initGallerySwiper(id, thumbsInstance) {
-        // PDP main
-        var selector = `.js-pdpGallery-main[data-swiper-group-id="${id}"]`;
-        if ($page.find(selector).length > 0) {
-          new Swiper(selector, {
-            loop: true,
-            watchOverflow: true,
-            setWrapperSize: false,
-            initialSlide: 0,
-            spaceBetween: 5,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            normalizeSlideIndex: false,
-            freeMode: false,
-            pagination: {
-              el: '.swiper-pagination',
-              type: 'bullets',
-              clickable: true,
-            },
-            thumbs: {
-              swiper: thumbsInstance,
-            },
-          });
-        }
-      }
+      // program
+      this.data.swipers.programs = _this.utils.buildSwiper(
+        'programs',
+        {
+          loop: false,
+          spaceBetween: 34,
+          slidesPerView: 3,
+          slidesPerColumn: 2,
+          slidesPerColumnFill: 'row',
+        },
+        { navigation: true }
+      );
+
+      // events
+      this.data.swipers.events = _this.utils.buildSwiper(
+        'events',
+        {
+          loop: true,
+          spaceBetween: 64,
+          slidesPerView: 2,
+        },
+        { pagination: true }
+      );
+
+      // news
+      this.data.swipers.news = _this.utils.buildSwiper(
+        'news',
+        {
+          loop: true,
+          spaceBetween: 64,
+          slidesPerView: 2,
+        },
+        {}
+      );
     },
     initSwiperDataTree: function () {
-      var productsSwiper = '.js-products-swiper';
-      if ($(productsSwiper).length > 0) {
-        this.initSwiperTree(productsSwiper, 'productsSwiper');
+      var backstageSwiper = '.js-swiper-backstage';
+      if ($(backstageSwiper).length > 0) {
+        this.initSwiperTree(backstageSwiper, 'backstageSwiper');
       }
     },
     initResponsiveSwipers: function () {
-      var productsSwiper = '.js-products-swiper';
-      if ($(productsSwiper).length > 0) {
-        this.responsiveSwiperConstructor(productsSwiper, 'productsSwiper', {
+      var backstageSwiper = '.js-swiper-backstage';
+      if ($(backstageSwiper).length > 0) {
+        this.responsiveSwiperConstructor(backstageSwiper, 'backstageSwiper', {
           watchOverflow: true,
           setWrapperSize: false,
           spaceBetween: 0,
           slidesPerView: 'auto',
           freeMode: true,
-          freeModeSticky: true,
+          // centeredSlides: true,
+          freeModeSticky: false,
+          on: {
+            reachEnd: function (swiper) {
+              if (!APP.Components.Backstage.data.isFetching) {
+                APP.Components.Backstage.getNewBackstageItems();
+                swiper.setTranslate(0);
+              }
+            },
+          },
         });
       }
     },

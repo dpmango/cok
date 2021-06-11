@@ -32,11 +32,7 @@
           var el = $(this).attr('href');
           var topTarget = $(el).offset().top;
 
-          // $('body, html').animate({scrollTop: topTarget}, 1000);
-          TweenLite.to(window, 1, {
-            scrollTo: { y: topTarget, autoKill: false },
-            ease: easingSwing,
-          });
+          $('body, html').animate({ scrollTop: topTarget }, 1000);
 
           return false;
         })

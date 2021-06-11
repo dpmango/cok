@@ -1,0 +1,20 @@
+// news
+.news.pt-0.mb-1
+  .container
+    .news__head
+      h2.h2-title Новости
+      a(href='#').news__head-cta
+        span Все новости
+        +svgMono('arrow')
+
+    .news__slider.swiper-container.js-swiper-news
+      .swiper-wrapper
+        each slide in [1,2,3]
+          .swiper-slide
+            a(href="#").news-card
+              .news-card__image
+                img(src='img/news-placeholder-2.jpg' srcset='img/news-placeholder-2@2x.jpg 2x' alt="")
+                .news-card__data 25/07/2021
+              .news-card__content
+                .news-card__title Началось зачисление на бюджетные места. Списки к зачислению будут вывешенына сайт сегодня после 20.00
+                .news-card__description Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.

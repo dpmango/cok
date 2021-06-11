@@ -10,6 +10,13 @@ h1, h2, h3, h4, h5, h6
 
 .h2-title
   font-size: 46px
+  font-style: normal
+  font-weight: normal
+  font-size: 36px
+  line-height: 1.4
+  letter-spacing: -0.04em
+  text-transform: capitalize
+
 
 .h3-title
   font-size: 36px
@@ -51,7 +58,7 @@ a
   color: inherit
   text-decoration: none
   &:hover, &:focus
-    text-decoration: none
+    text-decoration: underline
 
 ul
   list-style: none
@@ -66,6 +73,12 @@ ul
 
   h2
     font-size: 46px
+    font-style: normal
+    font-weight: normal
+    font-size: 36px
+    line-height: 1.4
+    letter-spacing: -0.04em
+    text-transform: capitalize
 
   h3
     font-size: 36px
@@ -81,13 +94,16 @@ ul
 
   p
     font-size: 16px
-    line-height: 1.42
+    line-height: 1.7
+    color: $colorGray
 
   a
-    color: $colorPrimary
-    transition: color .25s $ease
+    color: $colorLink
+    text-decoration: underline
+    // transition: color .25s $ease
     &:hover
-      color: $colorAccent
+      text-decoration: none
+      // color: $colorAccent
 
   strong
     font-weight: bold
@@ -149,6 +165,18 @@ ul
 .tar
   text-align: right
 
+
+.link-iconed
+  display: inline-flex
+  align-items: center
+  font-size: 14px
+  line-height: 17px
+  .ico
+    flex: 0 0 auto
+    font-size: 18px
+  span
+    display: inline-block
+    margin-left: 6px
 
 // tables
 .table-scroller

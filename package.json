@@ -15,8 +15,8 @@
     "start": "gulp",
     "build": "gulp build --production",
     "lint:js": "node_modules/.bin/eslint . --fix",
-    "surge": "surge --project ./dist --domain khmelevskoy.surge.sh",
-    "deploy": "gulp build --production && surge --project ./dist --domain khmelevskoy.surge.sh"
+    "surge": "surge --project ./dist --domain cok-layout.surge.sh",
+    "deploy": "gulp build --production && surge --project ./dist --domain cok-layout.surge.sh"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
@@ -29,27 +29,15 @@
     }
   },
   "dependencies": {
-    "air-datepicker": "^2.2.3",
-    "aos": "^2.3.4",
-    "autofill-event": "^0.0.1",
-    "barba.js": "^1.0.0",
     "choices.js": "^9.0.1",
-    "clipboard": "^2.0.6",
-    "gsap": "^3.6.0",
     "jquery": "^3.5.1",
-    "jquery-lazy": "^1.7.11",
     "jquery-mask-plugin": "^1.14.16",
-    "jquery-selectric": "^0.2.0",
     "jquery-validation": "^1.19.3",
     "lodash": "^4.17.20",
-    "magnific-popup": "^1.1.0",
     "micromodal": "^0.4.6",
     "object-fit-images": "^3.2.4",
-    "photoswipe": "^4.1.3",
     "picturefill": "^3.0.3",
     "scroll-lock": "^2.1.4",
-    "scrollmonitor": "^1.2.4",
-    "sharer.js": "^0.4.1",
     "surge": "^0.21.7",
     "svg4everybody": "^2.1.9",
     "swiper": "^6.4.9",
