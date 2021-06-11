@@ -19,13 +19,13 @@ header.header
           a(href="tel:+79852008004").header__phone +7 (985) 200-80-04
 
           .header__right-wrapper
-            ul.header__menu
+            ul.header__menu.js-megamenu-trigger
               li.have-ul
-                a(href="homepage.html") Об университете
+                a(href="homepage.html" data-for="about") Об университете
               li.have-ul
-                a(href="page.html") Программы
+                a(href="page.html" data-for="programs") Программы
               li.have-ul
-                a(href="page.html") Проекты
+                a(href="page.html" data-for="projects") Проекты
               li
                 a(href="page.html") Документы
               li
@@ -39,6 +39,8 @@ header.header
                 span
                 span
                 span
+
+include _megamenu
 
 // MOBILE NAVI
 .mobile-navi
