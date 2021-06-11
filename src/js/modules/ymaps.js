@@ -17,7 +17,7 @@
       }
     },
     createScripts: function () {
-      var ymapsK = '9ba9a278-xxxxxxxxx';
+      var ymapsK = '112877c7-6deb-47d5-8107-8f9b28545f15';
       var ymapsScript = document.createElement('script');
       ymapsScript.type = 'text/javascript';
       ymapsScript.src = 'https://api-maps.yandex.ru/2.1/?apikey=' + ymapsK + '&lang=ru_RU';
@@ -64,10 +64,10 @@
           geodata: _this.geoStringToArr($domElement.data('placeholder')),
           caption: $domElement.data('placeholder-caption'),
           balloon: $domElement.data('placeholder-balloon'),
+          icon: $domElement.data('placeholder-icon'),
         },
       };
 
-      console.log(params);
       if (!params.center) return;
 
       // CREATE MAP INSTANCE
@@ -95,7 +95,7 @@
             iconCaption: params.placeholder.caption,
           },
           {
-            preset: 'islands#redIcon',
+            preset: params.placeholder.icon || 'islands#redIcon',
           }
         );
 

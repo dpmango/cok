@@ -73,6 +73,12 @@ ul
 
   h2
     font-size: 46px
+    font-style: normal
+    font-weight: normal
+    font-size: 36px
+    line-height: 1.4
+    letter-spacing: -0.04em
+    text-transform: capitalize
 
   h3
     font-size: 36px
@@ -88,13 +94,16 @@ ul
 
   p
     font-size: 16px
-    line-height: 1.42
+    line-height: 1.7
+    color: $colorGray
 
   a
-    color: $colorPrimary
-    transition: color .25s $ease
+    color: $colorLink
+    text-decoration: underline
+    // transition: color .25s $ease
     &:hover
-      color: $colorAccent
+      text-decoration: none
+      // color: $colorAccent
 
   strong
     font-weight: bold
