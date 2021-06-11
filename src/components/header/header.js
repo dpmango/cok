@@ -132,7 +132,7 @@
         // close on hovering outside menu (up on desktop)
         .on(
           'mouseleave',
-          '.header__menu',
+          '.header-global',
           debounce(
             function () {
               if (!APP.Browser().data.isMobile) {
@@ -210,6 +210,7 @@
 
         if (scroll.y > this.data.header.bottomPoint) {
           this.data.header.container.addClass(fixedClass);
+          $('body').addClass('is-header-fixed');
 
           if (scroll.y > this.data.header.bottomPoint * 2 && scroll.direction === 'up') {
             this.makeHeaderVisible();
@@ -227,6 +228,7 @@
           });
 
           this.data.header.container.removeClass(fixedClass);
+          $('body').removeClass('is-header-fixed');
         }
       }
     },

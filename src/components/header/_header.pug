@@ -1,56 +1,61 @@
 // HEADER :: START
-header.header
-  .header__top
-    .container
-      .header__top-wrapper
-        a(href="#").link-iconed
-          +svgMono('eye')
-          span Версия для слабовидящих
+.header-global
+  header.header
+    .header__top
+      .container
+        .header__top-wrapper
+          a(href="#").link-iconed
+            +svgMono('eye')
+            span Версия для слабовидящих
 
-        a(href="#") Switch to English
+          a(href="#") Switch to English
 
-  .header__main
-    .container
-      .header__wrapper
-        .header__left
-          a(href="homepage.html").header__logo
-            +svgColor('logo')
-        .header__right
-          a(href="tel:+79852008004").header__phone +7 (985) 200-80-04
+    .header__main
+      .container
+        .header__wrapper
+          .header__left
+            a(href="homepage.html").header__logo
+              +svgColor('logo')
+          .header__right
+            a(href="tel:+79852008004").header__phone +7 (985) 200-80-04
 
-          .header__right-wrapper
-            ul.header__menu.js-megamenu-trigger
-              li.have-ul
-                a(href="homepage.html" data-for="about") Об университете
-              li.have-ul
-                a(href="page.html" data-for="programs") Программы
-              li.have-ul
-                a(href="page.html" data-for="projects") Проекты
-              li
-                a(href="page.html") Документы
-              li
-                a(href="page.html") Контакты
+            .header__right-wrapper
+              ul.header__menu.js-megamenu-trigger
+                li.have-ul
+                  a(href="#" data-for="about") Об университете
+                li.have-ul
+                  a(href="#" data-for="programs") Программы
+                li.have-ul
+                  a(href="#" data-for="projects") Проекты
+                li
+                  a(href="#") Документы
+                li
+                  a(href="#") Контакты
 
-            .header__search
-              +svgMono('search')
+              .header__search
+                +svgMono('search')
 
-            .header__hamburger
-              .hamburger.js-hamburger
-                span
-                span
-                span
+              .header__hamburger
+                .hamburger.js-hamburger
+                  span
+                  span
+                  span
 
-include _megamenu
+  include _megamenu
 
-// MOBILE NAVI
-.mobile-navi
-  .mobile-navi__wrapper
-    ul.mobile-navi__menu
-      li
-        a(href="homepage.html") Homepage
-      li
-        a(href="page.html") Shop
-      li
-        a(href="page.html") Lorem
-    .mobile-navi__cta
-      a(href="mailto:sergey@khmelevskoy.co") sergey@khmelevskoy.co
+  // MOBILE NAVI
+  .mobile-navi
+    .mobile-navi__wrapper
+      ul.mobile-navi__menu
+        li.have-ul
+          a(href="#") Об университете
+        li.have-ul
+          a(href="#") Программы
+        li.have-ul
+          a(href="#") Проекты
+        li
+          a(href="#") Документы
+        li
+          a(href="#") Контакты
+      .mobile-navi__cta
+        a(href="mailto:sergey@khmelevskoy.co") sergey@khmelevskoy.co
