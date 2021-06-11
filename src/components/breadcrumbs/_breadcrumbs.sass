@@ -1,0 +1,33 @@
+// Breadcrumbs
+.breadcrumbs
+  margin: 0px 0
+
+  &__list
+    list-style: none
+    margin: -5px
+    padding: 0
+    li
+      display: inline-block
+      font-size: 14px
+      line-height: 17px
+      margin-left: -2px
+      &:first-child
+        margin-left: 0
+    a, span
+      display: inline-block
+      padding: 5px
+      color: $colorLink
+    a
+      transition: color .25s $ease
+      &:hover
+        color: $colorRed
+    li:not(:last-child)
+      a
+        &::after
+          display: inline-block
+          content: '/'
+          margin-left: 8px
+          margin-right: -2px
+          font-weight: 700
+          color: $colorRed
+          pointer-events: none
