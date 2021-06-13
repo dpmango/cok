@@ -2,44 +2,114 @@
   display: none
   position: fixed 0
   z-index: 8
-  background: $colorBg
+  padding: 0 30px
+  background: rgba(#000000, .3)
   // display: flex
   flex-direction: column
   pointer-events: none
-  transform: translate3d(0,-100%,0)
-  transition: transform .3s $ease
+  opacity: 0
+  transition: opacity .15s $ease
   &__wrapper
-    flex: 1 1 auto
+    flex: 0 1 auto
     display: flex
     flex-direction: column
-    padding: 50px 25px 20px
+    max-height: 100%
+    min-height: 1px
+    padding: 100px 40px 40px
+    background: #FFFFFF
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15)
+    border-radius: 25px
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+    pointer-events: none
+    transform: translate3d(0,-100%,0)
+    transition: transform .1s .25s $ease
+  &__top
+    display: none
   &__menu
-    margin-top: auto
-    padding: 20px 0
+    padding: 36px 0 0
+    margin: 0
     list-style: none
-    text-align: center
     li
       display: block
-      font-size: 36px
-      margin-bottom: 30px
+      font-size: 24px
+      margin-bottom: 20px
       &:last-child
         margin-bottom: 0
-    a
-      transition: .25s $ease
-      &:hover
-        color: tomato
-  &__cta
-    text-align: center
-    margin-top: auto
-    a
-      transition: .25s $ease
-      &:hover
-        color: tomato
+      ul
+        display: none
+        margin: 0
+        padding: 24px 20px 24px 0
+        li
+          font-size: 18px
+          margin-bottom: 15px
+    a::after
+      width: 16px
+      height: 9px
+      margin-left: 16px
+
 
   &.is-active
-    pointer-events: all
-    transform: translate3d(0,0,0)
+    opacity: 1
+    .mobile-navi
+      &__wrapper
+        pointer-events: all
+        transform: translate3d(0,0,0)
+
++r($lg)
+  .mobile-navi
+    display: flex
+    &__menu
+      display: block
 
 +r($md)
   .mobile-navi
-    display: flex
+    padding: 0
+    &__wrapper
+      padding-top: 50px
+    &__top
+      display: flex
+      justify-content: space-between
+      margin-left: -40px
+      margin-right: -40px
+      padding: 20px 40px 15px 40px
+      background: $colorPrimary
+      border-radius: 0 0 10px 10px
+      color: white
+      a
+        display: inline-block
+        min-width: 70px
+        span
+          display: block
+          margin-top: 8px
+          font-size: 14px
+          line-height: 120%
+        .ico
+          font-size: 19px
+
+    &__menu
+
++r($sm)
+  .mobile-navi
+    &__wrapper
+      padding-left: 20px
+      padding-right: 20px
+    &__top
+      margin-left: -20px
+      margin-right: -20px
+      padding-left: 20px
+      padding-right: 20px
+    &__menu
+      padding-top: 24px
+      li
+        font-size: 18px
+        margin-bottom: 14px
+        ul
+          padding: 12px 5px 18px 0
+          li
+            font-size: 14px
+            margin-bottom: 12px
+      a::after
+        width: 14px
+        height: 8px
+        margin-left: 12px

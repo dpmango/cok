@@ -74,6 +74,17 @@
     li
       display: inline-block
       margin-right: auto
+      &.have-ul
+        > a::after
+          display: inline-block
+        &.is-active
+          a::after
+            transform: rotate(180deg)
+      &:last-child
+        margin-right: 0
+    a
+      position: relative
+      color: $colorLink
       &::after
         display: none
         content: ' '
@@ -84,14 +95,7 @@
         background-size: contain
         margin-left: 10px
         vertical-align: middle
-      &.have-ul
-        &::after
-          display: inline-block
-      &:last-child
-        margin-right: 0
-    a
-      color: $colorLink
-      transition: color .25s ease
+        transition: transform .25s $ease
 
   &__search
     flex: 0 0 auto
@@ -134,11 +138,6 @@
   &.is-transitioning
     transition: transform .25s ease
     transform: translate3d(0,-100%,0) !important
-
-+r($xl)
-  .header
-    &__menu
-      padding-left: 0px
 
 +r($lg)
   .header

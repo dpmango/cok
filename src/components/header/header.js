@@ -107,6 +107,25 @@
         }
       });
 
+      _document.on('click', function (e) {
+        var $target = $(e.target);
+        var isNotMobileMenu = $target.closest('.mobile-navi__wrapper').length === 0;
+        var isNotHeader = $target.closest('.header').length === 0;
+
+        if (isNotMobileMenu && isNotHeader) {
+          _this.closeMobileMenu();
+        }
+      });
+
+      // mobile menu
+      _document.on('click', '.js-mobile-navi-menu li.have-ul > a', function (e) {
+        var $li = $(this).closest('li');
+        var $list = $li.find('ul');
+
+        $li.toggleClass('is-active');
+        $list.slideToggle();
+      });
+
       // megamenu
       _document.on('click mouseenter', '.js-megamenu-trigger a', _this.openMegaMenu);
       _document.on('mouseleave', '.js-megamenu-trigger a', function () {
