@@ -91,6 +91,8 @@ ul
     text-decoration: underline
     &:hover
       text-decoration: none
+    &:visited
+      color: $colorPrimaryLight
 
   strong
     font-weight: bold
@@ -100,16 +102,108 @@ ul
     font-size: 24px
     line-height: 1.4
     padding: 0
+    margin: 0
     color: #505050
 
-  ul, ol, blockquote
-    margin-left: 0
-    margin-right: 0
+  img
+    max-width: 100%
+    height: auto
+    margin-bottom: 20px
 
-  p, ul, ol, blockquote, h1, h2, h3, h4, h5, h6, table, .table-scroller
+  figure
+    display: inline-block
+    text-align: center
+    img
+      vertical-align: top
+      margin: 0
+    figcaption
+      margin-top: 1em
+      font-weight: 400
+      font-size: 14px
+      line-height: 22px
+      color: $colorGray
+
+  img[align="left"], figure[align="left"]
+    float: left
+    max-width: 60%
+
+  img[align="right"], figure[align="right"]
+    float: right
+    max-width: 60%
+
+  img[align="left"]
+    margin: 0.5em 2em 0.5em 0
+
+  figure[align="left"]
+    margin: 1em 2em 1em 0
+
+  img[align="right"]
+    margin: 0.5em 0 0.5em 2em
+
+  figure[align="right"]
+    margin: 1em 0 1em 2em
+
+
+  ol, ul
+    list-style: none
+    margin: 0 0 1em 2em
+    padding: 0
+    font-weight: 400
+    font-size: 16px
+    line-height: (24 / 16)
+    color: $colorGray
+
+  ol li, ul li
+    margin-bottom: 10px
+
+  ol li:last-child, ul li:last-child
+    margin-bottom: 0
+
+  ul
+    > li
+      position: relative
+      padding-left: 26px
+      &:before
+        display: block
+        content: "/"
+        top: -2px
+        left: 0
+        position: absolute
+        font-size: 18px
+        font-weight: 700
+        color: $colorRed
+
+      ol, ul
+        margin: 10px 0 0
+
+  ol
+    counter-reset: css_counter
+
+    > li
+      &:before
+        -ms-flex-negative: 0
+        flex-shrink: 0
+        counter-increment: css_counter
+        content: counter(css_counter)
+        margin-right: 8px
+        font: inherit
+        font-weight: 700
+        color: $colorPrimaryLight
+
+      ol, ul
+        margin: 10px 0 0 32px
+
+      ol > li:before
+        content: counters(css_counter, ".")
+
+  ul, ol, blockquote
+    // margin-left: 0
+    // margin-right: 0
+
+  p, ul, ol, blockquote, img, figure, h1, h2, h3, h4, h5, h6, table, .table-scroller
     margin-top: 0
     margin-bottom: 0
-    & + p, & + ul, & + ol, & + blockquote, & + table, & + .table-scroller
+    & + p, & + ul, & + ol, & + blockquote, & + figure, & + img, & + table, & + .table-scroller
       margin-top: 1em
       margin-bottom: 1em
     & + h1, & + h2, & + h3, & + h4, & + h5, & + h6,
@@ -117,6 +211,31 @@ ul
 
 +r($lg)
   .wysiwyg
+
++r($md)
+  .wysiwyg
+    img[align="left"], figure[align="left"]
+      float: none
+      max-width: 100%
+
+    img[align="right"], figure[align="right"]
+      float: none
+      max-width: 100%
+
+    img[align="left"]
+      margin-right: 0
+    figure[align="left"]
+      margin-right: 0
+    img[align="right"]
+      margin-left: 0
+    figure[align="right"]
+      margin-left: 0
+
+    figure
+      width: 100% !important
+
+    ol, ul
+      margin-left: 0
 
 +r($sm)
   .h1-title
@@ -251,17 +370,19 @@ ul
 // .table--w-head
 .table--w-head
   thead
-    td
+    td, th
       background: $colorBg
       border-radius: 2px
       font-weight: 500
       font-size: 16px
       line-height: 1.42
-      padding: 10px 15px
+      padding: 8px 15px
+      text-align: left
   tbody
     td
       font-size: 14px
-      padding: 20px 15px
+      padding: 16px 15px
+      border-bottom: 1px solid $borderColor
     tr:first-child
       td
         padding-top: 30px
