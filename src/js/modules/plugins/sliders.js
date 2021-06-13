@@ -139,7 +139,7 @@
         {
           loop: false,
           spaceBetween: 20,
-          slidesPerView: 1,
+          slidesPerView: 'auto',
           breakpoints: {
             576: {
               spaceBetween: 20,
@@ -160,13 +160,15 @@
         {
           loop: false,
           spaceBetween: 20,
-          slidesPerView: 1,
-          slidesPerColumn: 2,
-          slidesPerColumnFill: 'row',
+          slidesPerView: 'auto',
+          slidesPerColumn: 1,
+          // slidesPerColumnFill: 'row',
           breakpoints: {
             576: {
               spaceBetween: 20,
               slidesPerView: 2,
+              slidesPerColumn: 2,
+              slidesPerColumnFill: 'row',
             },
             992: {
               spaceBetween: 34,
@@ -183,7 +185,7 @@
         {
           loop: true,
           spaceBetween: 20,
-          slidesPerView: 2,
+          slidesPerView: 'auto',
           breakpoints: {
             576: {
               spaceBetween: 20,
@@ -204,7 +206,7 @@
         {
           loop: true,
           spaceBetween: 20,
-          slidesPerView: 2,
+          slidesPerView: 'auto',
           breakpoints: {
             576: {
               spaceBetween: 20,
@@ -216,7 +218,7 @@
             },
           },
         },
-        {}
+        { pagination: true }
       );
     },
     initSwiperDataTree: function () {

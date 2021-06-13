@@ -4,10 +4,10 @@
     .news__head
       h2.h2-title Новости
       a(href='#').news__head-cta
-        span Все новости
+        span Все <span>новости</span>
         +svgMono('arrow')
 
-    .news__slider.swiper-container.js-swiper-news
+    .news__slider.swiper-container.js-swiper-news.pagination-simple
       .swiper-wrapper
         each slide in [1,2,3]
           .swiper-slide
@@ -18,3 +18,5 @@
               .news-card__content
                 .news-card__title Началось зачисление на бюджетные места. Списки к зачислению будут вывешенына сайт сегодня после 20.00
                 .news-card__description Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+      .swiper-pagination.swiper-news-pagination

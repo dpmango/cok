@@ -129,7 +129,7 @@
       order: 1
       flex: 0 0 50%
       max-width: 50%
-      padding: 10px 10px 12px
+      padding: 10px 10px 12px 0
       br
         display: none
     &__nav-ul
@@ -139,3 +139,14 @@
       padding: 10px
       li
         margin-bottom: 6px
+
++r($lg)
+  .footer
+    &__main
+      flex-basis: 100%
+      max-width: 100%
+    &__menu, &__nav-ul
+      display: none
+    &__developer
+      flex-basis: 100%
+      max-width: 100%

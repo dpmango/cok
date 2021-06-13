@@ -2,6 +2,8 @@
 .hero
   &__slide
     position: relative
+    z-index: 1
+    overflow: hidden
   &__content
     position: relative
     z-index: 2
@@ -64,3 +66,33 @@
     .fraction-nav
       left: 23px
       bottom: 20px
+
++r($sm)
+  .hero
+    &__slide
+      min-height: 240px
+      display: flex
+      flex-direction: column
+    &__content
+      margin-top: auto
+      padding: 16px 20px
+      width: 100%
+      min-height: 1px
+    &__slide-title
+      font-size: 24px
+      line-height: 1.2
+    &__slide-description
+      display: none
+
+    .fraction-nav
+      left: auto
+      right: 20px
+      bottom: 95px
+      .swiper-prev, .swiper-next
+        display: none
+      .swiper-pagination
+        background: rgba(0, 0, 0, 0.39)
+        border-radius: 8px
+        padding: 7px 8px 5px
+        line-height: 1
+        font-weight: normal

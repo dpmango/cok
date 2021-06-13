@@ -17,8 +17,11 @@
             a(href="homepage.html").header__logo
               +svgColor('logo')
               +svgColor('logo-compact')
+              +svgColor('logo-letters')
           .header__right
-            a(href="tel:+79852008004").header__phone +7 (985) 200-80-04
+            a(href="tel:+79852008004").header__phone
+              span +7 (985) 200-80-04
+              +svgMono('phone')
 
             .header__right-wrapper
               ul.header__menu.js-megamenu-trigger

@@ -29,22 +29,6 @@ h1, h2, h3, h4, h5, h6
   font-size: 18px
 
 
-// +r($lg)
-//   .h1-title
-//     font-size: 44px
-
-//   // responsive
-//   .h3-title-lg
-//     font-size: 36px
-
-// +r($sm)
-//   .h1-title
-//     font-size: 36px
-
-//   // responsive
-//   .h3-title-sm
-//     font-size: 36px
-
 // paragraphs
 .p-main
   font-size: 18px
@@ -105,6 +89,7 @@ ul
   strong
     font-weight: bold
     font-weight: 700
+
   blockquote
     font-size: 24px
     line-height: 1.4
@@ -126,13 +111,22 @@ ul
 
 +r($lg)
   .wysiwyg
-    h1
-      font-size: 44px
+    // h1
+    //   font-size: 44px
 
 +r($sm)
+  .h2-title
+    font-size: 18px
+
   .wysiwyg
-    h1
-      font-size: 36px
+    h2
+      font-size: 18px
+
+    p
+      font-size: 14px
+
+    // h1
+    //   font-size: 36px
 
 // little inline helpers
 .f-400

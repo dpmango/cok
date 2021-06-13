@@ -37,6 +37,8 @@
     padding-bottom: 22px
     .ico-color-logo-compact
       display: none
+    .ico-color-logo-letters
+      display: none
     .ico
       font-size: 87px
 
@@ -59,6 +61,8 @@
     letter-spacing: 0.01em
     padding: 8px 0
     margin-left: auto
+    .ico
+      display: none
 
   &__menu
     flex: 1 1 auto
@@ -93,6 +97,7 @@
     flex: 0 0 auto
     padding-bottom: 26px
     font-size: 0
+    cursor: pointer
     .ico
       font-size: 20px
 
@@ -185,3 +190,36 @@
           padding-bottom: 0px
         &__right-wrapper
           margin-bottom: 0
+
++r($md)
+  .header
+    &__top
+      display: none
+    &__wrapper
+      padding-top: 9px
+      padding-bottom: 9px
+    &__logo
+      .ico-color-logo-compact
+        display: none
+      .ico-color-logo-letters
+        display: block
+      .ico
+        font-size: 32px
+    &__phone
+      padding-top: 6px
+      span
+        display: none
+      .ico
+        display: inline-block
+        fill: transparent
+        stroke: #646464
+        font-size: 20px
+
+    &.is-fixed
+      .header
+        &__logo
+          .ico
+            font-size: 32px
+        &__wrapper
+          padding-top: 9px
+          padding-bottom: 9px

@@ -18,11 +18,18 @@
       .swiper-pagination
         display: flex
 
-+r($lg)
++r($sm)
   .activities
+    padding-bottom: 20px
     &__slider
+      margin-top: 16px
+      .swiper-container
+        overflow: visible
+      .swiper-slide
+        width: calc(100% - 20px)
 
 
+// .activity-card
 .activity-card
   position: relative
   z-index: 1
@@ -42,7 +49,7 @@
   &__title
     margin-top: -4px
     font-size: 18px
-    line-height: 22px
+    line-height: (22 / 18)
     color: $colorLink
   &__description
     margin-top: 14px
@@ -62,3 +69,13 @@
     .activity-card
       &__title
         text-decoration: underline
+
++r($sm)
+  .activity-card
+    padding: 18px 18px 22px
+    &__title
+      margin-top: 0
+      font-size: 16px
+    &__cta
+      margin-right: 8px
+
