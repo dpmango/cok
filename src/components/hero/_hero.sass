@@ -2,6 +2,8 @@
 .hero
   &__slide
     position: relative
+    z-index: 1
+    overflow: hidden
   &__content
     position: relative
     z-index: 2
@@ -10,6 +12,9 @@
     justify-content: center
     width: 50%
     min-height: 450px
+    padding-right: 35px
+    padding-top: 30px
+    padding-bottom: 30px
     color: white
     @supports (backdrop-filter: blur(14px))
       background: rgba(89, 135, 179, 0.4)
@@ -36,7 +41,7 @@
 
   &__slide-description
     max-width: 420px
-    margin-top: 22px
+    margin-top: 0.9em
     font-size: 24px
     line-height: 1.2
     letter-spacing: -0.04em
@@ -51,4 +56,43 @@
 +r($lg)
   .hero
     &__content
-      padding-left: 20px
+      padding-left: 30px
+      min-height: 344px
+    &__slide-title
+      font-size: 36px
+      line-height: 100%
+    &__slide-description
+      font-size: 18px
+    .fraction-nav
+      left: 23px
+      bottom: 20px
+
++r($sm)
+  .hero
+    &__slide
+      min-height: 240px
+      display: flex
+      flex-direction: column
+    &__content
+      margin-top: auto
+      padding: 16px 20px
+      width: 100%
+      min-height: 1px
+    &__slide-title
+      font-size: 24px
+      line-height: 1.2
+    &__slide-description
+      display: none
+
+    .fraction-nav
+      left: auto
+      right: 20px
+      bottom: 95px
+      .swiper-prev, .swiper-next
+        display: none
+      .swiper-pagination
+        background: rgba(0, 0, 0, 0.39)
+        border-radius: 8px
+        padding: 7px 8px 5px
+        line-height: 1
+        font-weight: normal

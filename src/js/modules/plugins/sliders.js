@@ -138,10 +138,20 @@
         'activities',
         {
           loop: false,
-          spaceBetween: 34,
-          slidesPerView: 3,
+          spaceBetween: 20,
+          slidesPerView: 'auto',
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+            },
+            992: {
+              spaceBetween: 34,
+              slidesPerView: 3,
+            },
+          },
         },
-        { navigation: true }
+        { navigation: true, pagination: true }
       );
 
       // program
@@ -149,12 +159,24 @@
         'programs',
         {
           loop: false,
-          spaceBetween: 34,
-          slidesPerView: 3,
-          slidesPerColumn: 2,
-          slidesPerColumnFill: 'row',
+          spaceBetween: 20,
+          slidesPerView: 'auto',
+          slidesPerColumn: 1,
+          // slidesPerColumnFill: 'row',
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+              slidesPerColumn: 2,
+              slidesPerColumnFill: 'row',
+            },
+            992: {
+              spaceBetween: 34,
+              slidesPerView: 3,
+            },
+          },
         },
-        { navigation: true }
+        { navigation: true, pagination: true }
       );
 
       // events
@@ -162,8 +184,18 @@
         'events',
         {
           loop: true,
-          spaceBetween: 64,
-          slidesPerView: 2,
+          spaceBetween: 20,
+          slidesPerView: 'auto',
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+            },
+            992: {
+              spaceBetween: 64,
+              slidesPerView: 2,
+            },
+          },
         },
         { pagination: true }
       );
@@ -173,10 +205,20 @@
         'news',
         {
           loop: true,
-          spaceBetween: 64,
-          slidesPerView: 2,
+          spaceBetween: 20,
+          slidesPerView: 'auto',
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+            },
+            992: {
+              spaceBetween: 64,
+              slidesPerView: 2,
+            },
+          },
         },
-        {}
+        { pagination: true }
       );
     },
     initSwiperDataTree: function () {

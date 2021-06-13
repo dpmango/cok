@@ -17,10 +17,7 @@
       display: inline-block
       padding: 5px
       color: $colorLink
-    a
-      transition: color .25s $ease
-      &:hover
-        color: $colorRed
+
     li:not(:last-child)
       a
         &::after
@@ -31,3 +28,24 @@
           font-weight: 700
           color: $colorRed
           pointer-events: none
+
+  &__mobile
+    display: none
+
++r($sm)
+  .breadcrumbs
+    &__list
+      display: none
+    &__mobile
+      display: flex
+      align-items: center
+      .ico
+        transform: rotate(180deg)
+        color: $colorPrimaryLight
+        font-size: 14px
+      span
+        display: inline-block
+        font-size: 14px
+        line-height: 17px
+        margin-left: 8px
+        color: $colorLink

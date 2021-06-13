@@ -35,6 +35,10 @@
     display: inline-block
     font-size: 0
     padding-bottom: 22px
+    .ico-color-logo-compact
+      display: none
+    .ico-color-logo-letters
+      display: none
     .ico
       font-size: 87px
 
@@ -47,6 +51,9 @@
     display: flex
     align-items: center
     margin-top: auto
+    margin-left: auto
+    width: 100%
+    max-width: 760px
 
   &__phone
     font-size: 18px
@@ -54,6 +61,8 @@
     letter-spacing: 0.01em
     padding: 8px 0
     margin-left: auto
+    .ico
+      display: none
 
   &__menu
     flex: 1 1 auto
@@ -61,7 +70,7 @@
     align-items: center
     font-size: 16px
     margin: auto 50px 0 0
-    padding: 0 0 26px 90px
+    padding: 0 0 26px 0px
     li
       display: inline-block
       margin-right: auto
@@ -88,12 +97,13 @@
     flex: 0 0 auto
     padding-bottom: 26px
     font-size: 0
+    cursor: pointer
     .ico
       font-size: 20px
 
   &__hamburger
     display: none
-    padding-left: 20px
+    padding-left: 32px
 
   &.is-fixed
     // should be normalized to -100% scroll at this point
@@ -104,6 +114,7 @@
       &__top
         display: none
       &__logo
+        padding-bottom: 10px
         .ico
           font-size: 46px
       &__phone
@@ -123,3 +134,92 @@
   &.is-transitioning
     transition: transform .25s ease
     transform: translate3d(0,-100%,0) !important
+
++r($xl)
+  .header
+    &__menu
+      padding-left: 0px
+
++r($lg)
+  .header
+    &__wrapper
+      padding-top: 12px
+      padding-bottom: 16px
+    &__logo
+      padding-bottom: 0
+      .ico-color-logo
+        display: none
+      .ico-color-logo-compact
+        display: block
+      .ico
+        font-size: 38px
+    &__right
+      flex-direction: row
+      margin-left: auto
+    &__right-wrapper
+      width: auto
+      margin-top: 0
+      margin-left: 32px
+    &__phone
+      padding-bottom: 0
+      text-decoration: underline
+      &:hover
+        text-decoration: none
+    &__menu
+      display: none
+    &__search
+      padding-bottom: 0
+      color: #646464
+    &__hamburger
+      display: block
+
+    &.is-fixed
+      .header
+        &__logo
+          padding-bottom: 0px
+          .ico
+            font-size: 38px
+        &__phone
+          display: inline-block
+        &__wrapper
+          padding-top: 10px
+          padding-bottom: 10px
+        &__menu
+          padding-bottom: 0px
+        &__search
+          padding-bottom: 0px
+        &__right-wrapper
+          margin-bottom: 0
+
++r($md)
+  .header
+    &__top
+      display: none
+    &__wrapper
+      padding-top: 9px
+      padding-bottom: 9px
+    &__logo
+      .ico-color-logo-compact
+        display: none
+      .ico-color-logo-letters
+        display: block
+      .ico
+        font-size: 32px
+    &__phone
+      padding-top: 6px
+      span
+        display: none
+      .ico
+        display: inline-block
+        fill: transparent
+        stroke: #646464
+        font-size: 20px
+
+    &.is-fixed
+      .header
+        &__logo
+          .ico
+            font-size: 32px
+        &__wrapper
+          padding-top: 9px
+          padding-bottom: 9px

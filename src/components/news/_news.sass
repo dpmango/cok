@@ -11,15 +11,40 @@
       display: inline-block
       margin-right: 10px
       font-size: 18px
-      line-height: 22px
+      line-height: (22 / 18)
       color: $colorLink
+      span
+        margin-right: 0
     .ico
+      color: $colorPrimaryLight
 
   &__slider
     margin-top: 36px
     .swiper-pagination
       margin-top: 32px
 
++r($xl)
+  .news
+    &__slider
+      margin-top: 20px
+      .swiper-pagination
+        margin-top: 20px
+
++r($sm)
+  .news
+    padding-bottom: 18px
+    &__head-cta
+      span
+        font-size: 14px
+        span
+          display: none
+      .ico
+        font-size: 13px
+    &__slider
+      margin-top: 16px
+      overflow: visible
+      .swiper-slide
+        width: calc(100% - 20px)
 
 // .news-card
 .news-card
@@ -46,7 +71,7 @@
     padding: 24px 10px 12px
   &__title
     font-size: 24px
-    line-height: 29px
+    line-height: (29 / 24)
     color: $colorLink
   &__description
     margin-top: 12px
@@ -63,3 +88,11 @@
         text-decoration: none
 
 
++r($md)
+  .news-card
+    &__content
+      padding: 16px 8px 4px
+    &__title
+      font-size: 16px
+    &__description
+      font-size: 14px
