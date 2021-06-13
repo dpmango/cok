@@ -4,7 +4,7 @@
 
     h2.h2-title Направления деятельности
 
-    .activities__slider.navigation-simple
+    .activities__slider.navigation-simple.pagination-simple
       .swiper-container.js-swiper-activities
         .swiper-wrapper
           each slide in [1,2,3,4]
@@ -24,3 +24,5 @@
         +svgMono('arrow-nav-right')
       .swiper-prev.swiper-activities-prev
         +svgMono('arrow-nav-left')
+
+      .swiper-pagination.swiper-activities-pagination

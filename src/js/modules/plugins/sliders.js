@@ -138,10 +138,20 @@
         'activities',
         {
           loop: false,
-          spaceBetween: 34,
-          slidesPerView: 3,
+          spaceBetween: 20,
+          slidesPerView: 1,
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+            },
+            992: {
+              spaceBetween: 34,
+              slidesPerView: 3,
+            },
+          },
         },
-        { navigation: true }
+        { navigation: true, pagination: true }
       );
 
       // program
@@ -149,12 +159,22 @@
         'programs',
         {
           loop: false,
-          spaceBetween: 34,
-          slidesPerView: 3,
+          spaceBetween: 20,
+          slidesPerView: 1,
           slidesPerColumn: 2,
           slidesPerColumnFill: 'row',
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+            },
+            992: {
+              spaceBetween: 34,
+              slidesPerView: 3,
+            },
+          },
         },
-        { navigation: true }
+        { navigation: true, pagination: true }
       );
 
       // events
@@ -162,8 +182,18 @@
         'events',
         {
           loop: true,
-          spaceBetween: 64,
+          spaceBetween: 20,
           slidesPerView: 2,
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+            },
+            992: {
+              spaceBetween: 64,
+              slidesPerView: 2,
+            },
+          },
         },
         { pagination: true }
       );
@@ -173,8 +203,18 @@
         'news',
         {
           loop: true,
-          spaceBetween: 64,
+          spaceBetween: 20,
           slidesPerView: 2,
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+            },
+            992: {
+              spaceBetween: 64,
+              slidesPerView: 2,
+            },
+          },
         },
         {}
       );

@@ -5,7 +5,22 @@
   &__slider
     position: relative
     margin-top: 20px
+    .swiper-pagination
+      display: none
+      margin-top: 20px
 
++r($xl)
+  .activities
+    padding-bottom: 30px
+    &__slider
+      .swiper-next, .swiper-prev
+        display: none
+      .swiper-pagination
+        display: flex
+
++r($lg)
+  .activities
+    &__slider
 
 
 .activity-card
