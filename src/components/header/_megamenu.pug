@@ -46,6 +46,9 @@ mixin list(list)
         "Информация об образовательных стандартах",
       ])
 
-.megamenu.js-megamenu(data-id="search")
+.megamenu.megamenu--full-w.js-megamenu(data-id="search")
   .megamenu__scroller
-    input(type="search" placeholder="Поиск ...")
+    form(action="#").megamenu__search
+      input(type="search" placeholder="Поиск ...")
+      button(type="submit")
+        +svgMono('arrow-long')

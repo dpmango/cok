@@ -173,17 +173,6 @@
       _document.on('click', '.header__search', function (e) {
         _this.openMegaMenu(e, 'search');
       });
-      // .on('focus', '.js-header-search input', function (e) {
-      //   _this.openMegaMenu(e, 'search');
-      // })
-      // .on('blur', '.js-header-search input', function () {
-      //   _this.closeMegaMenu();
-      // })
-      // .on('input', '.js-header-search input', debounce(this.headerSeachTyped.bind(this), 250))
-      // .on('submit', '.js-header-search', function (e) {
-      //   e.preventDefault();
-      //   _this.headerSeachSubmited();
-      // });
     },
     listenScroll: function () {
       _window.on('scroll', this.scrollHeader.bind(this));
@@ -260,16 +249,10 @@
       // for mouse hovers and not mobile devices
       if (isMouse && !isMobile) {
         // 150ms pause if hover till going further
-        APP.Components.Header.data.timer = setTimeout(callback, 150);
+        APP.Components.Header.data.timer = setTimeout(callback, 350);
       } else {
         callback();
       }
-    },
-    headerSeachTyped: function (e) {
-      var $input = $('.js-header-search input');
-      var inputVal = $input.val().trim();
-
-      this.openMegaMenu(e, 'search');
     },
     headerSeachSubmited: function () {
       var $form = $('.js-header-search');
