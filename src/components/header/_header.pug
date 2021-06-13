@@ -50,16 +50,26 @@
   // MOBILE NAVI
   .mobile-navi
     .mobile-navi__wrapper
-      ul.mobile-navi__menu
+      .mobile-navi__top
+        a(href="#")
+          +svgMono('eye')
+          span Версия <br/>для слабовидящих
+
+        a(href="#")
+          +svgMono('eng-flag')
+          span Switch <br/>to English
+
+      ul.header__menu.mobile-navi__menu.js-mobile-navi-menu
         li.have-ul
           a(href="#") Об университете
+          ul(data-teleport-target="mobile-navi-about")
         li.have-ul
           a(href="#") Программы
+          ul(data-teleport-target="mobile-navi-programs")
         li.have-ul
           a(href="#") Проекты
+          ul(data-teleport-target="mobile-navi-projects")
         li
           a(href="#") Документы
         li
           a(href="#") Контакты
-      .mobile-navi__cta
-        a(href="mailto:sergey@khmelevskoy.co") sergey@khmelevskoy.co

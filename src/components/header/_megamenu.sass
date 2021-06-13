@@ -17,6 +17,14 @@
   pointer-events: none
   will-change: opacity
   transition: .25s $ease
+  +r($lg)
+    top: 74px
+    max-height: calc(100% - 74px)
+  +r($md)
+    top: 24px
+    max-height: calc(100% - 24px)
+  &--full-w
+    left: calc(((100vw - 1114px) / 2) + 40px)
   &.is-active
     opacity: 1
     pointer-events: all
@@ -44,9 +52,74 @@
       line-height: 1.4
       color: $colorLink
 
+  &__search
+    position: relative
+    input
+      -webkit-appearance: none
+      display: block
+      width: 100%
+      background: transparent
+      font-size: 16px
+      color: #000
+      border: 2px solid #E5E5E5
+      border-radius: 4px
+      padding: 19px 60px 19px 20px
+      transition: border .1s $ease
+      &:focus, &:active
+        border-color: $borderColor
+    button
+      position: absolute
+      right: 0
+      top: 0
+      padding: 22px 18px
+      font-size: 0
+      background: transparent
+      box-shadow: none
+      color: $colorPrimaryLight
+      transition: color .25s $ease
+      .ico
+        font-size: 15px
+      &:hover
+        color: $colorPrimary
+
++r(1114)
+  .megamenu
+    left: 300px
+    right: 40px
+    &--full-w
+      left: 40px
+
++r($lg)
+  .megamenu
+    left: 30px
+    right: 30px
+    &--full-w
+      left: 30px
+
++r($md)
+  .megamenu
+    &__scroller
+      padding: 20px
+
++r($sm)
+  .megamenu
+    left: 0px
+    right: 0px
+    &--full-w
+      left: 0px
+    &__search
+      input
+        padding: 12px 40px 11px 15px
+      button
+        padding: 15px 14px
 
 body.is-header-fixed
   .megamenu
     top: 40px
     max-height: calc(100% - 40px)
-
+    +r($lg)
+      top: 40px
+      max-height: calc(100% - 40px)
+    +r($md)
+      top: 24px
+      max-height: calc(100% - 24px)

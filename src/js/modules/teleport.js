@@ -13,7 +13,7 @@
     },
     getElements: function () {
       var _this = this;
-      var $teleports = $('.page').last().find('.js-teleport');
+      var $teleports = $('.js-teleport');
       _this.data.teleports = [];
 
       if ($teleports.length === 0) {

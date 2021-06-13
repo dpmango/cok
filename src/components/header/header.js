@@ -107,6 +107,25 @@
         }
       });
 
+      _document.on('click', function (e) {
+        var $target = $(e.target);
+        var isNotMobileMenu = $target.closest('.mobile-navi__wrapper').length === 0;
+        var isNotHeader = $target.closest('.header').length === 0;
+
+        if (isNotMobileMenu && isNotHeader) {
+          _this.closeMobileMenu();
+        }
+      });
+
+      // mobile menu
+      _document.on('click', '.js-mobile-navi-menu li.have-ul > a', function (e) {
+        var $li = $(this).closest('li');
+        var $list = $li.find('ul');
+
+        $li.toggleClass('is-active');
+        $list.slideToggle();
+      });
+
       // megamenu
       _document.on('click mouseenter', '.js-megamenu-trigger a', _this.openMegaMenu);
       _document.on('mouseleave', '.js-megamenu-trigger a', function () {
@@ -154,17 +173,6 @@
       _document.on('click', '.header__search', function (e) {
         _this.openMegaMenu(e, 'search');
       });
-      // .on('focus', '.js-header-search input', function (e) {
-      //   _this.openMegaMenu(e, 'search');
-      // })
-      // .on('blur', '.js-header-search input', function () {
-      //   _this.closeMegaMenu();
-      // })
-      // .on('input', '.js-header-search input', debounce(this.headerSeachTyped.bind(this), 250))
-      // .on('submit', '.js-header-search', function (e) {
-      //   e.preventDefault();
-      //   _this.headerSeachSubmited();
-      // });
     },
     listenScroll: function () {
       _window.on('scroll', this.scrollHeader.bind(this));
@@ -241,16 +249,10 @@
       // for mouse hovers and not mobile devices
       if (isMouse && !isMobile) {
         // 150ms pause if hover till going further
-        APP.Components.Header.data.timer = setTimeout(callback, 150);
+        APP.Components.Header.data.timer = setTimeout(callback, 350);
       } else {
         callback();
       }
-    },
-    headerSeachTyped: function (e) {
-      var $input = $('.js-header-search input');
-      var inputVal = $input.val().trim();
-
-      this.openMegaMenu(e, 'search');
     },
     headerSeachSubmited: function () {
       var $form = $('.js-header-search');
