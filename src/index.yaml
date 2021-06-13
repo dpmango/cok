@@ -4,6 +4,6 @@ PageList:
   - file: homepage.html
     ready: 90
   - file: text.html
-    ready: 50
+    ready: 90
   - file: ui.html
-    ready: 10
+    ready: 50

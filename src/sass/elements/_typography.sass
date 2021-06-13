@@ -30,8 +30,14 @@ h1, h2, h3, h4, h5, h6
 
 
 // paragraphs
-.p-main
-  font-size: 18px
+.p-regular
+  font-size: 16px
+  line-height: 1.7
+  a
+    color: $colorLink
+    text-decoration: underline
+    &:hover
+      text-decoration: none
 
 p + p
   margin-top: 1em
@@ -50,16 +56,18 @@ ul
 
 // wysiwyg
 .wysiwyg
+  h1, h2, h3, h4, h5, h6
+    font-style: normal
+    font-weight: normal
+    line-height: 1.4
+    letter-spacing: -0.04em
+    text-transform: capitalize
+
   h1
     font-size: 48px
 
   h2
-    font-style: normal
-    font-weight: normal
     font-size: 36px
-    line-height: 1.4
-    letter-spacing: -0.04em
-    text-transform: capitalize
 
   h3
     font-size: 32px
@@ -81,10 +89,8 @@ ul
   a
     color: $colorLink
     text-decoration: underline
-    // transition: color .25s $ease
     &:hover
       text-decoration: none
-      // color: $colorAccent
 
   strong
     font-weight: bold
@@ -111,22 +117,35 @@ ul
 
 +r($lg)
   .wysiwyg
-    // h1
-    //   font-size: 44px
 
 +r($sm)
-  .h2-title
+  .h1-title
     font-size: 18px
 
+  .h2-title
+    font-size: 24px
+
   .wysiwyg
+    h1
+      font-size: 28px
     h2
+      font-size: 24px
+    h3
+      font-size: 22px
+    h4
+      font-size: 20px
+    h5
+      font-size: 18px
+    h6
+      font-size: 16px
+
+    blockquote
       font-size: 18px
 
     p
-      font-size: 14px
+      font-size: 16px
 
-    // h1
-    //   font-size: 36px
+
 
 // little inline helpers
 .f-400

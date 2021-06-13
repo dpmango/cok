@@ -8,3 +8,7 @@ mixin breadcrumbs(crumbs, modifier)
             a(href="#" itemprop="item")!= crumb
           else
             span!= crumb
+
+    a(href="#").breadcrumbs__mobile
+      +svgMono("arrow")
+      span Назад
