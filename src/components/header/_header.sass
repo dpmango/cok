@@ -96,6 +96,9 @@
         margin-left: 10px
         vertical-align: middle
         transition: transform .25s $ease
+    a.is-active
+      &::after
+        transform: rotate(180deg)
 
   &__search
     flex: 0 0 auto
@@ -107,7 +110,9 @@
 
   &__hamburger
     display: none
+    margin-top: 2px
     padding-left: 32px
+    font-size: 0
 
   &.is-fixed
     // should be normalized to -100% scroll at this point

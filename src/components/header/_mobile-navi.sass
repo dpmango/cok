@@ -56,6 +56,7 @@
         pointer-events: all
         transform: translate3d(0,0,0)
 
+
 +r($lg)
   .mobile-navi
     display: flex
@@ -113,3 +114,10 @@
         width: 14px
         height: 8px
         margin-left: 12px
+
+body.is-header-fixed
+  .mobile-navi
+    &__wrapper
+      padding-top: 56px
+      +r($md)
+        padding-top: 50px

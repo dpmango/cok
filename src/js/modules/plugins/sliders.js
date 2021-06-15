@@ -173,6 +173,8 @@
             992: {
               spaceBetween: 34,
               slidesPerView: 3,
+              slidesPerColumn: 2,
+              slidesPerColumnFill: 'row',
             },
           },
         },

@@ -25,6 +25,7 @@
         this.eventListeners();
         this.listenScroll();
         this.listenResize();
+        this.listenCursor();
       }
 
       this.closeMobileMenu();
@@ -144,7 +145,7 @@
                 _this.closeMegaMenuByTarget($target);
               }
             },
-            150,
+            300,
             { leading: false, trailing: true }
           )
         )
@@ -159,7 +160,7 @@
                 _this.closeMegaMenuByTarget($target);
               }
             },
-            150,
+            300,
             { leading: false, trailing: true }
           )
         )
@@ -249,7 +250,7 @@
       // for mouse hovers and not mobile devices
       if (isMouse && !isMobile) {
         // 150ms pause if hover till going further
-        APP.Components.Header.data.timer = setTimeout(callback, 350);
+        APP.Components.Header.data.timer = setTimeout(callback, 50);
       } else {
         callback();
       }

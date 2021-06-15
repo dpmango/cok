@@ -1,111 +1,187 @@
-/* Hamburger
-/* https://codepen.io/ahmadbassamemran/pen/abopOMY
-$width: 30px
-$height: 20px
-$span2: 9px
-$span3: 19px
-$barHeight: 2px
-$bez: cubic-bezier(0.8, 0.5, 0.2, 1.4)
-
+// https://github.com/jonsuh/hamburgers
 .hamburger
-  position: relative
-  width: $width
-  height: $height
   padding: 0px
-  background-color: transparent
-  border-style: none
-  outline: none
+  margin-right: -0px
+  display: inline-block
   cursor: pointer
-  transition: all .4s linear
-  span
-    width: 100%
-    height: $barHeight
+  transition-property: opacity, filter
+  transition-duration: 0.15s
+  transition-timing-function: linear
+  font: inherit
+  color: inherit
+  text-transform: none
+  background-color: transparent
+  border: 0
+  overflow: visible
+
+
+.hamburger-box
+  width: 30px
+  height: 20px
+  display: inline-block
+  position: relative
+
+.hamburger-inner
+  display: block
+  top: 50%
+  margin-top: -2px
+  width: 30px
+  height: 2px
+  background-color: #646464
+  border-radius: 2px
+  position: absolute
+  transition-property: transform
+  transition-duration: 0.15s
+  transition-timing-function: ease
+  &::before, &::after
+    width: 30px
+    height: 2px
     background-color: #646464
-    display: block
-    position: absolute
     border-radius: 2px
-    transition: all .5s ease
-    will-change: transform
-    &:nth-child(1)
-      top: 0px
-      left: 0px
-    &:nth-child(2)
-      top: $span2
-      right: 0px
-    &:nth-child(3)
-      top: $span3
-      left: 0px
+    position: absolute
+    transition-property: transform
+    transition-duration: 0.15s
+    transition-timing-function: ease
+  &::before, &::after
+    content: ""
+    display: block
+  &::before
+    top: -8px
+  &::after
+    bottom: -8px
 
-  &.is-active
-    transform: translate3d(0px,-4px,0)
-    transition: all 0.55s .4s linear
-    span
-      background-color: red
-      &:nth-child(2)
-        animation: span2 0.75s forwards $bez
-      &:nth-child(3)
-        animation: span3 0.4s forwards $bez
-        animation-delay: .7s
-      &:nth-child(1)
-        animation: span1 0.4s forwards $bez
-        animation-delay: .55s
+//
+// Squeeze
 
-  span
-    &:nth-child(1)
-      animation: span1_close 0.4s forwards $bez
-    &:nth-child(2)
-      animation: span2_close 0.4s forwards $bez
-    &:nth-child(3)
-      animation: span3_close 0.4s forwards $bez
+.hamburger--squeeze
+  .hamburger-inner
+    transition-duration: 0.1s
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)
+    &::before
+      transition: top 0.1s 0.14s ease, opacity 0.1s ease
+    &::after
+      transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+  &.is-active .hamburger-inner
+    transform: rotate(45deg)
+    background-color: $colorRed
+    transition-delay: 0.14s
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    &::before
+      top: 0
+      opacity: 0
+      background-color: $colorRed
+      transition: top 0.1s ease, opacity 0.1s 0.14s ease
+    &::after
+      bottom: 0
+      transform: rotate(-90deg)
+      background-color: $colorRed
+      transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1)
 
-@keyframes span2
-  0%
-    transform: translate(0, 0) scale(1)
-  20%, 40%, 50%, 80%, 100%
-    width: $barHeight * 2
-    height: $barHeight * 2
-    border-radius: 50%
-  20%
-    transform: translate(0, 0) scale(1)
-  40%
-    transform: translate(0, 0) scale(1)
-  50%
-    transform: translate(0, 9px) scale(1)
-  80%
-    transform: translate(0, -9px) scale(1)
-  100%
-    transform: translate(0, 30px) scale(0)
 
-@keyframes span3
-  0%
-    transform: translate(0, 0)
-  60%
-    transform: rotate(80deg) translate(-5px, -4px)
-  100%
-    transform: rotate(45deg) translate(-5px, -4px)
+// https://codepen.io/rosalieelphick/pen/xJyRoK
+// .hamburger
+//   position: relative
+//   width: 24px
+//   height: 24px
+//   cursor: pointer
+//   .bar
+//     padding: 0
+//     width: 24px
+//     height: 2px
+//     background-color: maroon
+//     display: block
+//     border-radius: 2px
+//     transition: all 0.4s ease-in-out
+//     position: absolute
 
-@keyframes span1
-  0%
-    transform: translate(0, 0)
-  60%
-    transform: rotate(-110deg) translate(-5px, -4px)
-  100%
-    transform: rotate(-45deg) translate(-$span2, $span2)
+// .bar1
+//   top: 0
+// .bar2
+//   top: 12px
+// .bar3
+//   top: 12px
+//   right: 0
+// .bar4
+//   bottom: 0
 
-@keyframes span1_close
-  0%
-    transform: rotate(-45deg) translate(-$span2, $span2)
-  100%
-    transform: rotate(0deg) translate(0, 0)
+// /* HAMBURGER 1
 
-@keyframes span2_close
-  0%
-    transform: translate(0, $span3) scale(0)
-  100%
-    transform: translate(0, 0) scale(1)
+// .hamburger
+//   &.is-active
+//     .bar1
+//       transform: rotate(45deg)
+//       transform-origin: 5%
+//       width: 41px
+//     .bar2
+//       transform: translateX(-40px)
+//       background-color: transparent
+//     .bar3
+//       transform: translateX(40px)
+//       background-color: transparent
+//     .bar4
+//       transform-origin: 5%
+//       transform: rotate(-45deg)
+//       width: 41px
 
-@keyframes span3_close
-  0%
-    transform: rotate(45deg) translate(-5px, -4px)
-  100%
-    transform: rotate(0deg) translate(0, 0)
+/* HAMBURGER 2
+
+// .checkbox2:checked + label > .hamburger2 >
+//   .bar1
+//     transform: translateX(40px)
+//     background-color: transparent
+
+//   .bar2
+//     transform: rotate(45deg)
+
+//   .bar3
+//     transform: rotate(-45deg)
+
+//   .bar4
+//     transform: translateX(-40px)
+//     background-color: transparent
+
+// .hamburger2 .bar2, .hamburger3 .bar3
+//   top: 13.5px
+
+/* HAMBURGER 4
+
+// .hamburger4
+//   .bar4
+//     top: 13.5px
+
+//   .bar5
+//     bottom: 0px
+
+//   .bar
+//     transition: all 0.4s ease-in-out, transform 0.4s ease-in-out 0.4s
+
+//   .bar2
+//     width: 1px
+//     transform: rotate(90deg)
+//     left: 13.5px
+
+//   .bar3
+//     width: 1px
+//     left: 13.5px
+
+// .checkbox4:checked + label > .hamburger4 >
+//   .bar1
+//     top: 13.5px
+//     background-color: transparent
+
+//   .bar2
+//     left: 0px
+//     width: 30px
+//     transform: rotate(45deg)
+
+//   .bar3
+//     left: 0
+//     width: 30px
+//     transform: rotate(-45deg)
+
+//   .bar4
+//     background-color: transparent
+
+//   .bar5
+//     bottom: 13.5px
+//     background-color: transparent

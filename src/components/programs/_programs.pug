@@ -6,12 +6,19 @@
     .programs__slider.navigation-simple.pagination-simple
       .swiper-container.js-swiper-programs
         .swiper-wrapper
-          each slide in [1,2,3,4,5,6,7,8]
+          each slide in [1,2,3,4]
             .swiper-slide
               a(href="#").program-card
                 .program-card__title Длинное название программы: &laquo;Конструирование и&nbsp;технология электронных средств&raquo;
                 .program-card__content
                   .program-card__description Дополнительная информация о&nbsp;времени обучения и&nbsp;пр.
+                  .program-card__cta
+                    +svgMono('arrow-long')
+            .swiper-slide
+              a(href="#").program-card
+                .program-card__title Длинное название программы: &laquo;Конструирование и&nbsp;
+                .program-card__content
+                  .program-card__description Дополнительная информация о&nbsp;времени обучения и&nbsp;пр. информация о&nbsp;времени обучения и&nbsp;пр. информация о&nbsp;времени обучения и&nbsp;пр.
                   .program-card__cta
                     +svgMono('arrow-long')
 
