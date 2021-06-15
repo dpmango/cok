@@ -6,6 +6,10 @@
     margin-top: 34px
     .swiper-wrapper
       padding-bottom: 20px
+    .swiper-slide
+      display: flex
+      flex-direction: column
+      height: auto
     .swiper-next, .swiper-prev
       color: $colorPrimary
     .swiper-pagination
@@ -34,6 +38,7 @@
 
 // .program-card
 .program-card
+  flex: 1 0 auto
   position: relative
   z-index: 1
   display: flex
@@ -49,6 +54,7 @@
     line-height: 19px
     color: $colorLink
   &__content
+    margin-top: auto
     display: flex
   &__description
     margin-top: 16px
