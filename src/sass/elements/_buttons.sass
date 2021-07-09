@@ -8,7 +8,8 @@ button
     outline: none
 
 .btn
-  display: inline-block
+  display: inline-flex
+  align-items: center
   position: relative
   text-align: center
   cursor: pointer
@@ -25,15 +26,17 @@ button
   &--block
     display: block
     width: 100%
+  .ico
+    font-size: 22px
+    margin-right: 8px
 
   &-primary
     // please use paddings instead of line-height to control btn height
-    font-weight: bold
-    font-size: 16px
-    line-height: 16px
+    font-size: 18px
+    line-height: 1.2
     background: $colorPrimary
     color: white
-    padding: 17px 25px
+    padding: 13px 25px
     border-radius: 4px
     &:hover
       opacity: 0.8

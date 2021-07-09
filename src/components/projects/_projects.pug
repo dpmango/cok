@@ -1,0 +1,117 @@
+// Projects
+include ../breadcrumbs/_breadcrumbs
+
+.projects.header-offset
+  // crumbs container
+  .container
+    .projects__breadcrumbs
+      +breadcrumbs(['Главная страница', 'Проекты'])
+
+  // filters container
+  .container.container--wide
+    .projects__filters.p-filters
+      .p-filters__title Поиск Программы
+      .row
+        .col.col-12
+          .p-filters__group.ui-input-iconed
+            input.ui-input(type="text" id="filter" placeholder="Введите название")
+            +svgMono('arrow-long')
+        .col.col-4.col-md-12
+          .p-filters__group
+            select.js-choices.ui-input
+              option(value="" placeholder) Категория
+              option(value="1") Категория 1
+              option(value="2") Категория 2
+              option(value="3") Категория 3
+        .col.col-4.col-md-12
+          .p-filters__group
+            select.js-choices.ui-input
+              option(value="" placeholder) Направление
+              option(value="1") Направление 1
+              option(value="2") Направление 2
+              option(value="3") Направление 3
+        .col.col-4.col-md-12
+          .p-filters__group
+            select.js-choices.ui-input
+              option(placeholder value="") Форма обучения
+              option(value="1") Форма обучения 1
+              option(value="2") Форма обучения 2
+              option(value="3") Форма обучения 3
+
+  // list container
+  .container
+    .row.projects__list
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #FFE6E6")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #F1E6FF")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #D4FCED")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021
+
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #FFF5E6")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #CEEAFF")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #F1E6FF")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021
+
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #FFF5E6")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #FFE6E6")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021
+      // col
+      .col.col-4.col-lg-6.col-sm-12
+        a.project-card(href="#" style="background-color: #D4FCED")
+          .project-card__content
+            .project-card__title Проект профессионального стандарта «Руководитель образовательной организации высшего образования»
+          .project-card__sub
+            .project-card__date-title Время проведения:
+            .project-card__date-value 25.06.2021 — 30.09.2021

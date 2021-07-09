@@ -3,19 +3,19 @@
   -webkit-appearance: none
   display: block
   width: 100%
-  background: transparent
+  background: white
   font-family: $systemFont
-  font-size: 16px
+  font-size: 14px
   color: $fontColor
-  border: 1px solid $borderColor
-  border-radius: 0px
-  padding: 15px 15px
+  border: 1px solid transparent
+  border-radius: 4px
+  padding: 11px 10px
   transition: background
   transition: border .25s $ease, color .25s $ease, background .25s $ease
   &::placeholder
-    color: rgba($fontColor, 5)
+    color: #AAAAAA
   &:focus, &:active
-    background: white
+    border-color: $colorPrimaryLight
   &.has-error
     border-color: $colorRed
     &::placeholder
@@ -36,12 +36,12 @@
   .ico
     position: absolute
     top: 50%
-    right: 12px
+    right: 10px
     transform: translateY(-50%)
-    color: $colorPrimary
-    font-size: 24px
-  .ico-mono-calendar
-    font-size: 29px
+    color: $colorPrimaryLight
+    font-size: 14px
+    pointer-events: none
+
 
 textarea.ui-input
   resize: vertical
