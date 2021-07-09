@@ -5,5 +5,7 @@ PageList:
     ready: 100
   - file: text.html
     ready: 100
+  - file: project.html
+    ready: 100
   - file: ui.html
     ready: 50
