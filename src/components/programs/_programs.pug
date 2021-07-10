@@ -1,26 +1,37 @@
 // programs
 .programs
   .container
-    h2.h2-title Программы
+    h2.h2-title Программы <span class="xl-hidden">дополнительного профессионального образования</span> <span class="xl-visible">ДПО</span>
 
     .programs__slider.navigation-simple.pagination-simple
       .swiper-container.js-swiper-programs
         .swiper-wrapper
-          each slide in [1,2,3,4]
+          -
+            var list = [
+              {image: 'program-1', title: 'Цифровой куратор', desc: '10 000 ₽ / 170 часов'},
+              {image: 'program-2', title: 'Системное администрирование', desc: '10 000 ₽ / 170 часов'},
+              {image: 'program-3', title: 'Кибербезопасность и защита данных ', desc: '10 000 ₽ / 170 часов'},
+              {image: 'program-4', title: 'Медийно-информационная грамотность', desc: '10 000 ₽ / 170 часов'},
+              {image: 'program-5', title: 'Подготовка эксперта по независимой оценке квалификации', desc: '10 000 ₽ / 170 часов'},
+              {image: 'program-6', title: 'Практика применения профессиональных стандартов в образовательной организации ВО ', desc: '10 000 ₽ / 170 часов'},
+
+              {image: 'program-3', title: 'Кибербезопасность и защита данных ', desc: '10 000 ₽ / 170 часов'},
+              {image: 'program-4', title: 'Медийно-информационная грамотность', desc: '10 000 ₽ / 170 часов'},
+              {image: 'program-5', title: 'Подготовка эксперта по независимой оценке квалификации', desc: '10 000 ₽ / 170 часов'},
+              {image: 'program-6', title: 'Практика применения профессиональных стандартов в образовательной организации ВО ', desc: '10 000 ₽ / 170 часов'},
+            ]
+          each slide in list
             .swiper-slide
               a(href="#").program-card
-                .program-card__title Длинное название программы: &laquo;Конструирование и&nbsp;технология электронных средств&raquo;
+                .program-card__main
+                  .program-card__image
+                    img(src='img/'+slide.image+'.jpg' srcset='img/'+slide.image+'@2x.jpg 2x')
+                  .program-card__title= slide.title
                 .program-card__content
-                  .program-card__description Дополнительная информация о&nbsp;времени обучения и&nbsp;пр.
+                  .program-card__description= slide.desc
                   .program-card__cta
                     +svgMono('arrow-long')
-            .swiper-slide
-              a(href="#").program-card
-                .program-card__title Длинное название программы: &laquo;Конструирование и&nbsp;
-                .program-card__content
-                  .program-card__description Дополнительная информация о&nbsp;времени обучения и&nbsp;пр. информация о&nbsp;времени обучения и&nbsp;пр. информация о&nbsp;времени обучения и&nbsp;пр.
-                  .program-card__cta
-                    +svgMono('arrow-long')
+
 
       .swiper-next.swiper-programs-next
         +svgMono('arrow-nav-right')

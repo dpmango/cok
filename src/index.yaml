@@ -2,7 +2,7 @@ ProjectTitle: СУЗ
 
 PageList:
   - file: homepage.html
-    ready: 100
+    ready: 90
   - file: text.html
     ready: 100
   - file: project.html
