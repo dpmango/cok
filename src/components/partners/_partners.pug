@@ -1,0 +1,30 @@
+// partners
+.partners
+  .container
+    h2.h2-title Партнёры
+
+    .partners__slider.navigation-simple.pagination-simple
+      .swiper-container.js-swiper-partners
+        .swiper-wrapper
+          -
+            var list = [
+              {image: 'partner-1'},
+              {image: 'partner-2'},
+              {image: 'partner-3'},
+              {image: 'partner-2'},
+              {image: 'partner-1'},
+            ]
+          each slide in list
+            .swiper-slide
+              .partner-card
+                .partner-card__image
+                  img(src='img/'+slide.image+'.jpg' srcset='img/'+slide.image+'@2x.jpg 2x')
+
+
+
+      .swiper-next.swiper-partners-next
+        +svgMono('arrow-nav-right')
+      .swiper-prev.swiper-partners-prev
+        +svgMono('arrow-nav-left')
+
+      .swiper-pagination.swiper-partners-pagination

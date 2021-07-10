@@ -6,7 +6,8 @@
     data: {
       swipers: {
         hero: undefined,
-        activities: undefined,
+        // activities: undefined,
+        partners: undefined,
         programs: undefined,
         events: undefined,
         news: undefined,
@@ -134,25 +135,25 @@
       );
 
       // activities
-      this.data.swipers.activities = _this.utils.buildSwiper(
-        'activities',
-        {
-          loop: false,
-          spaceBetween: 20,
-          slidesPerView: 'auto',
-          breakpoints: {
-            576: {
-              spaceBetween: 20,
-              slidesPerView: 2,
-            },
-            992: {
-              spaceBetween: 34,
-              slidesPerView: 3,
-            },
-          },
-        },
-        { navigation: true, pagination: true }
-      );
+      // this.data.swipers.activities = _this.utils.buildSwiper(
+      //   'activities',
+      //   {
+      //     loop: false,
+      //     spaceBetween: 20,
+      //     slidesPerView: 'auto',
+      //     breakpoints: {
+      //       576: {
+      //         spaceBetween: 20,
+      //         slidesPerView: 2,
+      //       },
+      //       992: {
+      //         spaceBetween: 34,
+      //         slidesPerView: 3,
+      //       },
+      //     },
+      //   },
+      //   { navigation: true, pagination: true }
+      // );
 
       // program
       this.data.swipers.programs = _this.utils.buildSwiper(
@@ -160,9 +161,9 @@
         {
           loop: false,
           spaceBetween: 20,
-          slidesPerView: 'auto',
-          slidesPerColumn: 1,
-          // slidesPerColumnFill: 'row',
+          slidesPerView: 1,
+          slidesPerColumn: 2,
+          slidesPerColumnFill: 'row',
           breakpoints: {
             576: {
               spaceBetween: 20,
@@ -175,6 +176,27 @@
               slidesPerView: 3,
               slidesPerColumn: 2,
               slidesPerColumnFill: 'row',
+            },
+          },
+        },
+        { navigation: true, pagination: true }
+      );
+
+      // program
+      this.data.swipers.partners = _this.utils.buildSwiper(
+        'partners',
+        {
+          loop: false,
+          spaceBetween: 20,
+          slidesPerView: 'auto',
+          breakpoints: {
+            576: {
+              spaceBetween: 20,
+              slidesPerView: 2,
+            },
+            992: {
+              spaceBetween: 34,
+              slidesPerView: 3,
             },
           },
         },

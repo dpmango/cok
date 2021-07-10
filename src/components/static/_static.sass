@@ -33,6 +33,11 @@
     color: $colorRed
   &__content
     margin-top: 40px
+  &__row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
 
 +r($lg)
   .static
@@ -51,4 +56,101 @@
     &__date-content
       font-size: 18px
 
++r(480)
+  .static
+    &__row
+      flex-direction: column
+      align-items: flex-start
+      .btn
+        margin-top: 20px
 
+
+.s-program
+  display: flex
+  flex-wrap: wrap
+  &__head
+    margin-bottom: 40px
+    .h2-title
+      margin-top: 40px
+    img
+      max-width: 100%
+  &__content, &__sidebar
+    width: 100%
+    min-width: 1px
+    min-height: 0
+  &__content
+    flex: 0 0 calc(100% - 280px)
+    max-width: calc(100% - 280px)
+    padding-right: 40px
+  &__sidebar
+    flex: 0 0 280px
+    max-width: 280px
+  &__box
+    background: #FFFFFF
+    border: 6px solid #F1E5FF
+    border-radius: 12px
+    padding: 22px
+    & + &
+      margin-top: 30px
+    &--secondary
+      border-color: #EAEAEA
+  &__scope
+    & + &
+      margin-top: 22px
+  &__scope-label
+    font-size: 14px
+    line-height: 140%
+    color: #AAAAAA
+  &__scope-value
+    font-size: 24px
+    line-height: 120%
+    font-weight: 600
+  &__note
+    font-size: 16px
+    line-height: 1.7
+    color: $colorGray
+    strong
+      font-weight: bold
+      color: $fontColor
+  &__cta
+    display: flex
+    justify-content: flex-end
+    margin-top: -78px
+    margin-bottom: 30px
+  &__mobile
+    display: none
+
++r($lg)
+  .s-program
+    display: block
+    &__head
+      img
+        display: none
+    &__content
+      max-width: 100%
+      padding-right: 0
+    &__sidebar
+      display: none
+    &__mobile
+      display: flex
+      margin-top: 28px
+    &__cta
+      display: none
+    &__box
+      flex-basis: 285px
+      margin-right: 20px
+      & + &
+        margin-top: 0
+      &:last-child
+        margin-right: 0
+      &--secondary
+        flex-basis: calc(100% - 285px)
+
++r(680)
+  .s-program
+    &__mobile
+      display: block
+    &__box
+      margin-right: 0
+      & + &
+        margin-top: 20px

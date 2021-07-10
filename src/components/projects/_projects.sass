@@ -1,0 +1,79 @@
+// Projects
+.projects
+  margin-top: 40px
+  margin-bottom: 80px
+  &__breadcrumbs
+    // margin-top: 10px
+
+  &__filters
+    position: relative
+    z-index: 4
+    margin-top: 20px
+    padding: 10px 70px
+    background: #F1F1F1
+    border-radius: 10px
+
+  &__list
+    margin-top: 68px
+    margin-bottom: -40px
+
++r($lg)
+  .projects
+    &__filters
+      padding-left: 30px
+      padding-right: 30px
+      margin-left: -30px
+      margin-right: -30px
+    &__list
+      margin-top: 60px
+
+
++r($sm)
+  .projects
+    &__filters
+      padding-left: 20px
+      padding-right: 20px
+      margin-left: -20px
+      margin-right: -20px
+
+
+.p-filters
+  .row
+    margin-left: -8px
+    margin-right: -8px
+  .col
+    padding-left: 8px
+    padding-right: 8px
+  &__group
+    padding: 10px 0
+
+.project-card
+  position: relative
+  z-index: 1
+  background: #FFE6E6
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1)
+  border-radius: 12px
+  margin-bottom: 40px
+  overflow: hidden
+  &__content
+    padding: 20px 20px 30px
+  &__title
+    font-size: 16px
+    font-weight: 600
+    line-height: 1.4
+    max-width: 305px
+  &__sub
+    padding: 14px 20px
+    background: white
+  &__date-title
+    font-size: 14px
+    line-height: 1.4
+    color: #AAAAAA
+  &__date-value
+    font-size: 16px
+    line-height: 1.4
+    color: $colorRed
+  &:hover
+    text-decoration: none
+    .project-card__title
+      text-decoration: underline

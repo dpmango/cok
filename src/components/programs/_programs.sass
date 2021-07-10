@@ -1,17 +1,16 @@
 .programs
-  background: $colorBg
+  background: $colorPrimary
+  color: white
   padding: 24px 0 50px
   &__slider
     position: relative
-    margin-top: 34px
+    margin-top: 20px
     .swiper-wrapper
       padding-bottom: 20px
     .swiper-slide
       display: flex
       flex-direction: column
       height: auto
-    .swiper-next, .swiper-prev
-      color: $colorPrimary
     .swiper-pagination
       display: none
 
@@ -20,7 +19,6 @@
   .programs
     padding-bottom: 30px
     &__slider
-      margin-top: 20px
       .swiper-next, .swiper-prev
         display: none
       .swiper-pagination
@@ -34,7 +32,7 @@
       .swiper-container
         overflow: visible
       .swiper-slide
-        width: calc(100% - 20px)
+        // width: calc(100% - 20px)
 
 // .program-card
 .program-card
@@ -45,27 +43,54 @@
   flex-direction: column
   background: #FFFFFF
   border-radius: 8px 8px 32px 8px
-  padding: 24px 26px 22px 28px
+  padding: 0
+  min-height: 184px
   box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.1)
-  &__head
-    display: flex
+  overflow: hidden
+  &__main
+    flex: 1 0 auto
+    position: relative
+    z-index: 1
+    padding: 24px 26px 68px 28px
+    overflow: hidden
+  &__image
+    position: absolute 0
+    z-index: 1
+    font-size: 0
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute 0
+      background: rgba(0, 42, 90, 0.47)
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
   &__title
-    font-size: 16px
-    line-height: 19px
-    color: $colorLink
+    position: relative
+    z-index: 3
+    font-size: 18px
+    font-weight: 700
+    color: white
   &__content
-    margin-top: auto
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 2
     display: flex
+    align-items: center
+    padding: 17px 26px 13px 28px
+    background: white
   &__description
-    margin-top: 16px
-    font-size: 12px
-    line-height: 14px
-    padding-right: 40px
+    font-size: 14px
+    line-height: 1.5
+    font-weight: 600
+    padding-right: 20px
     color: $colorGray
     text-decoration: none
   &__cta
-    margin-top: auto
-    margin-bottom: -4px
+    margin-left: auto
     font-size: 0
     color: $colorPrimaryLight
     .ico
@@ -75,16 +100,3 @@
     .program-card
       &__title
         text-decoration: underline
-
-+r($sm)
-  .program-card
-    padding: 16px 18px 22px
-    &__content
-      flex-direction: column
-    &__description
-      margin-top: 6px
-      padding-right: 10px
-    &__cta
-      margin-top: 8px
-      margin-right: 8px
-      margin-left: auto
