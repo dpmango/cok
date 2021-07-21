@@ -7,16 +7,22 @@
         span Все <span>новости</span>
         +svgMono('arrow')
 
-    .news__slider.swiper-container.js-swiper-news.pagination-simple
-      .swiper-wrapper
-        each slide in [1,2,3]
-          .swiper-slide
-            a(href="#").news-card
-              .news-card__image
-                img(src='img/news-placeholder-2.jpg' srcset='img/news-placeholder-2@2x.jpg 2x' alt="")
-                .news-card__data 25/07/2021
-              .news-card__content
-                .news-card__title Началось зачисление на бюджетные места. Списки к зачислению будут вывешенына сайт сегодня после 20.00
-                .news-card__description Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    .news__slider.pagination-simple.navigation-simple
+      .swiper-container.js-swiper-news
+        .swiper-wrapper
+          each slide in [1,2,3]
+            .swiper-slide
+              a(href="#").news-card
+                .news-card__image
+                  img(src='img/news-placeholder-2.jpg' srcset='img/news-placeholder-2@2x.jpg 2x' alt="")
+                  .news-card__data 25/07/2021
+                .news-card__content
+                  .news-card__title Началось зачисление на бюджетные места. Списки к зачислению будут вывешенына сайт сегодня после 20.00
+                  .news-card__description Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+      .swiper-next.swiper-news-next
+        +svgMono('arrow-nav-right')
+      .swiper-prev.swiper-news-prev
+        +svgMono('arrow-nav-left')
 
       .swiper-pagination.swiper-news-pagination
