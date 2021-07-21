@@ -221,7 +221,7 @@
             },
           },
         },
-        { pagination: true }
+        { navigation: true, pagination: true }
       );
 
       // news
@@ -242,7 +242,7 @@
             },
           },
         },
-        { pagination: true }
+        { navigation: true, pagination: true }
       );
     },
     initSwiperDataTree: function () {

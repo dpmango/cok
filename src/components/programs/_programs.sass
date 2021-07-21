@@ -44,34 +44,28 @@
   background: #FFFFFF
   border-radius: 8px 8px 32px 8px
   padding: 0
-  min-height: 184px
+  min-height: 160px
   box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.1)
   overflow: hidden
   &__main
     flex: 1 0 auto
     position: relative
     z-index: 1
-    padding: 24px 26px 68px 28px
+    display: flex
+    align-items: flex-start
+    padding: 24px 22px 68px 18px
     overflow: hidden
-  &__image
-    position: absolute 0
-    z-index: 1
-    font-size: 0
-    &::after
-      display: inline-block
-      content: ' '
-      position: absolute 0
-      background: rgba(0, 42, 90, 0.47)
-    img
-      width: 100%
-      height: 100%
-      object-fit: cover
+    .ico
+      flex: 0 0 auto
+      margin-right: 16px
+      font-size: 32px
   &__title
     position: relative
     z-index: 3
-    font-size: 18px
-    font-weight: 700
-    color: white
+    font-weight: 500
+    font-size: 20px
+    line-height: 110%
+    color: $colorPrimary
   &__content
     position: absolute
     bottom: 0
@@ -80,6 +74,7 @@
     z-index: 2
     display: flex
     align-items: center
+    border-top: 1px solid #B8E1FF
     padding: 17px 26px 13px 28px
     background: white
   &__description

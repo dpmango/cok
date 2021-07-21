@@ -19,17 +19,26 @@
       color: $colorPrimaryLight
 
   &__slider
+    position: relative
     margin-top: 36px
     .swiper-pagination
       margin-top: 32px
+    .swiper-next, .swiper-prev
+      top: 32.5%
+      color: $colorPrimary
+    .swiper-pagination
+      display: none
 
 +r($xl)
   .news
     &__slider
       margin-top: 20px
       .swiper-pagination
+        display: flex
+        padding-bottom: 30px
         margin-top: 20px
-
+      .swiper-next, .swiper-prev
+        display: none
 +r($sm)
   .news
     padding-bottom: 18px
