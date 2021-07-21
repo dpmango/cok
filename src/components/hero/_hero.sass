@@ -5,67 +5,67 @@
     z-index: 1
     overflow: hidden
   &__content
-    position: relative
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
     z-index: 2
     display: flex
     flex-direction: column
     justify-content: center
-    width: 50%
-    min-height: 450px
+    height: 70%
     padding-right: 35px
     padding-top: 30px
-    padding-bottom: 30px
+    padding-bottom: 40px
     color: white
-    @supports (backdrop-filter: blur(14px))
-      background: rgba(89, 135, 179, 0.4)
-      backdrop-filter: blur(14px)
-    @supports not (backdrop-filter: blur(14px))
-      background: rgba(89, 135, 179, 0.7)
-
+    background: linear-gradient(0deg, #FFFFFF -2.97%, rgba(255, 255, 255, 0.01) 95.79%)
   &__background
-    position: absolute 0
+    height: 100%
+    min-height: 620px
     z-index: 1
     display: flex
     flex-direction: column
     img, picture
+      flex: 1 1 auto
       width: 100%
       height: 100%
       object-fit: cover
 
   &__slide-title
-    max-width: 440px
+    margin-top: auto
+    max-width: 760px
     font-size: 48px
-    line-height: 100%
-    letter-spacing: -0.04em
-    text-decoration: underline
-
-  &__slide-description
-    max-width: 420px
-    margin-top: 0.9em
-    font-size: 24px
-    line-height: 1.2
-    letter-spacing: -0.04em
-
+    line-height: 110%
+    color: #0066B3
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.35)
   .fraction-nav
     position: absolute
     z-index: 3
-    bottom: 30px
-    left: -7px
+    right: 20px
+    bottom: 105px
     color: white
+    .swiper-prev, .swiper-next
+      display: none
+    .swiper-pagination
+      background: rgba(0, 0, 0, 0.39)
+      border-radius: 8px
+      padding: 7px 8px 5px
+      line-height: 1
+      font-weight: normal
 
 +r($lg)
   .hero
     &__content
       padding-left: 30px
-      min-height: 344px
+    &__background
+      min-height: 420px
     &__slide-title
       font-size: 36px
       line-height: 100%
-    &__slide-description
-      font-size: 18px
+      padding-right: 60px
     .fraction-nav
-      left: 23px
-      bottom: 20px
+      bottom: 82px
+
 
 +r($sm)
   .hero
@@ -73,26 +73,22 @@
       min-height: 240px
       display: flex
       flex-direction: column
+    &__bacgkround
+      min-height: 300px
     &__content
-      margin-top: auto
       padding: 16px 20px
       width: 100%
+      height: auto
       min-height: 1px
+      @supports (backdrop-filter: blur(14px))
+        background: rgba(89, 135, 179, 0.4)
+        backdrop-filter: blur(14px)
+      @supports not (backdrop-filter: blur(14px))
+        background: rgba(89, 135, 179, 0.7)
     &__slide-title
       font-size: 24px
       line-height: 1.2
-    &__slide-description
-      display: none
-
+      color: white
+      text-shadow: none
     .fraction-nav
-      left: auto
-      right: 20px
-      bottom: 95px
-      .swiper-prev, .swiper-next
-        display: none
-      .swiper-pagination
-        background: rgba(0, 0, 0, 0.39)
-        border-radius: 8px
-        padding: 7px 8px 5px
-        line-height: 1
-        font-weight: normal
+      bottom: 40px
