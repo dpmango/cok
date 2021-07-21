@@ -60,12 +60,19 @@
       margin-right: 16px
       font-size: 32px
   &__title
+    display: -webkit-box
     position: relative
     z-index: 3
     font-weight: 500
     font-size: 20px
     line-height: 110%
+    height: 3.4em; // fallback
     color: $colorPrimary
+    -webkit-line-clamp: 3
+    -webkit-box-orient: vertical
+    overflow: hidden
+    text-overflow: ellipsis
+
   &__content
     position: absolute
     bottom: 0
