@@ -9,11 +9,11 @@
 
       if (!APP.Browser().data.isIe) {
         // Viewport units buggyfill
-        window.viewportUnitsBuggyfill.init({
-          force: false,
-          refreshDebounceWait: 150,
-          appendToBody: true,
-        });
+        // window.viewportUnitsBuggyfill.init({
+        //   force: false,
+        //   refreshDebounceWait: 150,
+        //   appendToBody: true,
+        // });
       }
     },
     fixImages: function () {
