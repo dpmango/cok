@@ -9,30 +9,31 @@ include ../breadcrumbs/_breadcrumbs
 
   // filters container
   .container.container--wide
-    .projects__filters.p-filters
+    form(action="#").projects__filters.p-filters
       .p-filters__title Поиск Программы
       .row
         .col.col-12
-          .p-filters__group.ui-input-iconed
-            input.ui-input(type="text" id="filter" placeholder="Введите название")
-            +svgMono('arrow-long')
+          .p-filters__group
+            input.ui-input(type="text" id="filter" name="title" placeholder="Введите название")
+            button(type="submit")
+              +svgMono('arrow-long')
         .col.col-4.col-md-12
           .p-filters__group
-            select.js-choices.ui-input
+            select(name="category").js-choices.ui-input
               option(value="" placeholder) Категория
               option(value="1") Категория 1
               option(value="2") Категория 2
               option(value="3") Категория 3
         .col.col-4.col-md-12
           .p-filters__group
-            select.js-choices.ui-input
+            select(name="direction").js-choices.ui-input
               option(value="" placeholder) Направление
               option(value="1") Направление 1
               option(value="2") Направление 2
               option(value="3") Направление 3
         .col.col-4.col-md-12
           .p-filters__group
-            select.js-choices.ui-input
+            select(name="type").js-choices.ui-input
               option(placeholder value="") Форма обучения
               option(value="1") Форма обучения 1
               option(value="2") Форма обучения 2
